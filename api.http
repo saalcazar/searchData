@@ -12,12 +12,23 @@ POST http://localhost:1234/movies
 Content-Type: application/json
 
 {
-  "title": "The Shawshank Redemption",
-  "year": 1994,
-  "director": "Frank Darabont",
-  "duration": 142,
-  "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp",
+  "title": "Joker",
+  "year": 2009,
+  "director": "Samuel",
+  "duration": 182,
+  "poster": "https://i.ebayimg.com/images/g/ThEAAOSwXKlnFmlW/s-l1600.webp",
   "genre": [
     "Drama"
   ]
+}
+
+###Borrar película
+DELETE http://localhost:1234/movies/13ee1f77-e4c4-4250-9512-fc7b38f7b465
+
+###Actualizar película
+PATCH http://localhost:1234/movies/13ee1f77-e4c4-4250-9512-fc7b38f7b465
+Content-Type: application/json
+
+{
+  "year": 1993
 }
