@@ -2,7 +2,7 @@
 GET http://localhost:1234/movies
 
 ###Película por ID
-GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+GET http://localhost:1234/movies/8683a844-e25d-4f0f-91d3-925f96a6af44
 
 ###Películas por género
 GET http://localhost:1234/movies?genre=action
@@ -12,23 +12,27 @@ POST http://localhost:1234/movies
 Content-Type: application/json
 
 {
-  "title": "Joker",
-  "year": 2009,
-  "director": "Samuel",
-  "duration": 182,
-  "poster": "https://i.ebayimg.com/images/g/ThEAAOSwXKlnFmlW/s-l1600.webp",
+  "title": "La vita è bella",
+  "year": 1997,
+  "director": "roberto Benigni",
+  "duration": 117,
+  "poster": "https://pics.filmaffinity.com/la_vita_e_bella-646167341-large.jpg",
+  "rate": 8.5,
   "genre": [
     "Drama"
   ]
 }
 
 ###Borrar película
-DELETE http://localhost:1234/movies/13ee1f77-e4c4-4250-9512-fc7b38f7b465
+DELETE http://localhost:1234/movies/256e3cfb-eb1e-46aa-9582-8e3b7db4af2b
 
 ###Actualizar película
-PATCH http://localhost:1234/movies/13ee1f77-e4c4-4250-9512-fc7b38f7b465
+PATCH http://localhost:1234/movies/ba95b95c-4ef0-4451-97e8-8c05b446e2a0
 Content-Type: application/json
 
 {
-  "year": 1993
+  "rate": 8.5,
+  "genre": [
+    "Horror"
+  ]
 }
