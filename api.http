@@ -94,16 +94,16 @@ POST http://localhost:1234/roles
 Content-Type: application/json
 
 {
-  "nameRole": "Encargado"
+  "nameRole": "tecnico"
 }
 
 ###ROLES DELETE
-DELETE http://localhost:1234/roles/6e4190ae-9cb8-4ba4-81a9-18b5c20e1183
+DELETE http://localhost:1234/roles/ce1d3a13-dca1-4a36-b8fd-69cc82227ece
 
 ###ROLES UPDATE
-PUT http://localhost:1234/roles/a5e34eb4-0119-49b8-af0b-8520964d29ba
+PUT http://localhost:1234/roles/ce1d3a13-dca1-4a36-b8fd-69cc82227ece
 Content-Type: application/json
 
 {
-  "nameRegion": "Santa Cruz"
+  "nameRole": "Técnico"
 }
