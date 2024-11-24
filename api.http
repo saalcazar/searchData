@@ -27,12 +27,27 @@ Content-Type: application/json
 DELETE http://localhost:1234/movies/256e3cfb-eb1e-46aa-9582-8e3b7db4af2b
 
 ###Actualizar película
-PATCH http://localhost:1234/movies/ba95b95c-4ef0-4451-97e8-8c05b446e2a0
+PATCH http://localhost:1234/movies/0a938904-93c4-4762-8f36-d6e7271a314b
 Content-Type: application/json
 
 {
-  "rate": 8.5,
+  "rate": 9,
   "genre": [
-    "Horror"
+    "Action"
   ]
 }
+
+### *********USERS*********
+
+### ****AREAS****
+###AREAS GET ALL
+GET http://localhost:1234/areas
+
+### AREAS CREATE
+POST http://localhost:1234/areas
+Content-Type: application/json
+
+{
+  "nameArea": "Internacional"
+}
+
