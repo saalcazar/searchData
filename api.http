@@ -48,6 +48,62 @@ POST http://localhost:1234/areas
 Content-Type: application/json
 
 {
-  "nameArea": "Internacional"
+  "nameArea": "ONG's"
 }
 
+###AREAS DELETE
+DELETE http://localhost:1234/areas/ce900fda-20af-478a-9de9-279d4baf1b6e
+
+###UPDATE AREA
+PUT http://localhost:1234/areas/7bc65a9e-8716-4330-8a5a-f4a9e7a62b40
+Content-Type: application/json
+
+{
+  "nameArea": "Hola a todos"
+}
+
+### ****REGIONS****
+###REGIONS GET ALL
+GET http://localhost:1234/regions
+
+###REGIONS CREATE
+POST http://localhost:1234/regions
+Content-Type: application/json
+
+{
+  "nameRegion": "Oruro"
+}
+
+###REGIONS DELETE
+DELETE http://localhost:1234/regions/6e4190ae-9cb8-4ba4-81a9-18b5c20e1183
+
+###REGIONS UPDATE
+PUT http://localhost:1234/regions/a5e34eb4-0119-49b8-af0b-8520964d29ba
+Content-Type: application/json
+
+{
+  "nameRegion": "Santa Cruz"
+}
+
+### ****ROLE****
+###ROLES GET ALL
+GET http://localhost:1234/roles
+
+###ROLES CREATE
+POST http://localhost:1234/roles
+Content-Type: application/json
+
+{
+  "nameRole": "Encargado"
+}
+
+###ROLES DELETE
+DELETE http://localhost:1234/roles/6e4190ae-9cb8-4ba4-81a9-18b5c20e1183
+
+###ROLES UPDATE
+PUT http://localhost:1234/roles/a5e34eb4-0119-49b8-af0b-8520964d29ba
+Content-Type: application/json
+
+{
+  "nameRegion": "Santa Cruz"
+}

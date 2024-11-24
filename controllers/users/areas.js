@@ -27,4 +27,14 @@ export class AreaController {
     }
     return res.json({ message: 'Area deleted' })
   }
+
+  update = async (req, res) => {
+    const { id } = req.params
+    const result = validateArea(req.body)
+    if (!result.success) {
+      return res.status(400).json({ error: JSON.parse(result.error.message) })
+    }
+    const updateArea = await this.areaModel.update({ idArea: id, input: result.data })
+    return res.status(201).json(updateArea)
+  }
 }

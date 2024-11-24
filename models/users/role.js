@@ -1,17 +1,17 @@
 import { pool } from '../../helpers/dataBaseConect.js'
 
-export class AreaModel {
+export class RoleModel {
   static async getAll () {
     try {
-      const allAreas = await pool.query('SELECT id_area, create_area, name_area FROM areas')
-      return allAreas.rows
+      const allRoles = await pool.query('SELECT id_role, create_role, name_role FROM roles')
+      return allRoles.rows
     } catch (e) {
       throw new Error('Error to send information')
     }
   }
 
   static async create ({ input }) {
-    const { nameArea } = input
+    const { nameRole } = input
 
     const uuidResult = await pool.query('SELECT gen_random_uuid() uuid')
     const [{ uuid }] = uuidResult.rows
@@ -19,31 +19,31 @@ export class AreaModel {
     const idSuperUserResult = await pool.query('SELECT id FROM super_user')
     const [{ id }] = idSuperUserResult.rows
     try {
-      await pool.query('SELECT create_area($1, $2, $3)', [uuid, nameArea, id])
+      await pool.query('SELECT create_role($1, $2, $3)', [uuid, nameRole, id])
     } catch (e) {
       throw new Error('Error to send information')
     }
-    const result = await pool.query('SELECT id_area, name_area FROM areas WHERE id_area = $1', [uuid])
+    const result = await pool.query('SELECT id_role, name_role FROM roles WHERE id_role = $1', [uuid])
     return result.rows
   }
 
-  static async update ({ idArea, input }) {
-    const { nameArea } = input
+  static async update ({ idRole, input }) {
+    const { nameRole } = input
 
     const idSuperUserResult = await pool.query('SELECT id FROM super_user')
     const [{ id }] = idSuperUserResult.rows
     try {
-      await pool.query('SELECT update_area($1, $2, $3)', [idArea, nameArea, id])
+      await pool.query('SELECT update_role($1, $2, $3)', [idRole, nameRole, id])
     } catch (e) {
       throw new Error('Error to send information')
     }
-    const result = await pool.query('SELECT id_area, name_area FROM areas WHERE id_area = $1', [idArea])
+    const result = await pool.query('SELECT id_role, name_role FROM roles WHERE id_role = $1', [idRole])
     return result.rows
   }
 
   static async delete ({ id }) {
     try {
-      await pool.query('SELECT delete_area($1)', [id])
+      await pool.query('SELECT delete_role($1)', [id])
     } catch (e) {
       throw new Error('Error to send information')
     }

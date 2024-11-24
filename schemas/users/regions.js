@@ -1,9 +1,9 @@
 import z from 'zod'
 
 const regionsSchema = z.object({
-  regionArea: z.string()
+  nameRegion: z.string()
 })
 
-export function validateArea (object) {
+export function validateRegion (object) {
   return regionsSchema.safeParse(object)
 }

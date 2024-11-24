@@ -9,6 +9,7 @@ export const createAreaRouter = ({ areaModel }) => {
   areasRouter.get('/', areaController.getAll)
   areasRouter.post('/', areaController.create)
   areasRouter.delete('/:id', areaController.delete)
+  areasRouter.put('/:id', areaController.update)
 
   return areasRouter
 }
