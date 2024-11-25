@@ -25,7 +25,7 @@ export class RoleController {
     if (result === false) {
       return res.status(400).json({ message: 'Role not found' })
     }
-    return res.json({ message: 'Role deleted' })
+    res.json({ message: 'Role deleted' })
   }
 
   update = async (req, res) => {
@@ -35,6 +35,6 @@ export class RoleController {
       return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
     const updateRole = await this.roleModel.update({ idRole: id, input: result.data })
-    return res.status(201).json(updateRole)
+    res.status(201).json(updateRole)
   }
 }

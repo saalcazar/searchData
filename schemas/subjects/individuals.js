@@ -9,7 +9,7 @@ const individualSchema = z.object({
     invalid_type_error: 'Nationality individual must be a string',
     required_error: 'Nationality indivudual is required'
   }),
-  birthdateIndividual: z.date(),
+  birthDateIndividual: z.string(),
   placeBirthIndividual: z.string(),
   genderIndividual: z.string(),
   maritalIndividual: z.string(),
@@ -19,7 +19,8 @@ const individualSchema = z.object({
   educationIndividual: z.string(),
   emailIndividual: z.string().email(),
   phoneIndividual: z.string(),
-  networksIndividual: z.array(z.string().url())
+  networksIndividual: z.record(z.string().url()),
+  idUser: z.string()
 })
 
 export function validateIndividual (object) {

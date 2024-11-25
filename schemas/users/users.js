@@ -12,7 +12,10 @@ const usersSchema = z.object({
   passwordUser: z.string({
     invalid_type_error: 'User password must be a string',
     required_error: 'Password for user is required'
-  })
+  }),
+  idArea: z.string(),
+  idRole: z.string(),
+  idRegion: z.string()
 })
 
 export function validateUser (object) {

@@ -13,8 +13,8 @@ const collectiveSchema = z.object({
   headquartersCollective: z.string(),
   descriptionCollective: z.string(),
   missionCollective: z.string(),
-  visionCollective: z.string().url(),
-  networksCollective: z.array(z.string().url()),
+  visionCollective: z.string(),
+  networkCollective: z.record(z.string().url()),
   infAreaCollective: z.string(),
   financingCollective: z.string(),
   personalCollective: z.record(z.string())
