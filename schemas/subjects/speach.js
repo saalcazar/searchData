@@ -1,9 +1,11 @@
 import z from 'zod'
 
-const speachsSchema = z.object({
-  speach: z.string()
+const speachSchema = z.object({
+  speach: z.string(),
+  idIndividual: z.string(),
+  idUser: z.string()
 })
 
 export function validateSpeach (object) {
-  return speachsSchema.safeParse(object)
+  return speachSchema.safeParse(object)
 }

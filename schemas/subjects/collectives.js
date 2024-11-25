@@ -17,7 +17,8 @@ const collectiveSchema = z.object({
   networkCollective: z.record(z.string().url()),
   infAreaCollective: z.string(),
   financingCollective: z.string(),
-  personalCollective: z.record(z.string())
+  personalCollective: z.record(z.string()),
+  idUser: z.string()
 })
 
 export function validateCollective (object) {

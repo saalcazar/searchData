@@ -9,14 +9,14 @@ POST http://localhost:1234/areas
 Content-Type: application/json
 
 {
-  "nameArea": "ONG's"
+  "nameArea": "Internacional"
 }
 
 ###AREAS DELETE
-DELETE http://localhost:1234/areas/1cb6ca6b-a29a-4317-9835-f51d8d567940
+DELETE http://localhost:1234/areas/6ea0ec42-559a-4103-a357-2926dee72e49
 
 ###UPDATE AREA
-PUT http://localhost:1234/areas/7bc65a9e-8716-4330-8a5a-f4a9e7a62b40
+PUT http://localhost:1234/areas/6ea0ec42-559a-4103-a357-2926dee72e49
 Content-Type: application/json
 
 {
@@ -36,10 +36,10 @@ Content-Type: application/json
 }
 
 ###REGIONS DELETE
-DELETE http://localhost:1234/regions/6e4190ae-9cb8-4ba4-81a9-18b5c20e1183
+DELETE http://localhost:1234/regions/829f202d-3b5a-4103-bf48-9bfbd319d8f8
 
 ###REGIONS UPDATE
-PUT http://localhost:1234/regions/a5e34eb4-0119-49b8-af0b-8520964d29ba
+PUT http://localhost:1234/regions/829f202d-3b5a-4103-bf48-9bfbd319d8f8
 Content-Type: application/json
 
 {
@@ -59,10 +59,10 @@ Content-Type: application/json
 }
 
 ###ROLES DELETE
-DELETE http://localhost:1234/roles/ce1d3a13-dca1-4a36-b8fd-69cc82227ece
+DELETE http://localhost:1234/roles/0e191897-f234-4079-b518-c7d346d1886c
 
 ###ROLES UPDATE
-PUT http://localhost:1234/roles/ce1d3a13-dca1-4a36-b8fd-69cc82227ece
+PUT http://localhost:1234/roles/0e191897-f234-4079-b518-c7d346d1886c
 Content-Type: application/json
 
 {
@@ -81,25 +81,25 @@ Content-Type: application/json
   "userName": "Alejandro Cabrera",
   "userNick": "cabrera25",
   "passwordUser": "a1b2c3d4c0",
-  "idArea": "dd74da3d-5330-453b-b97e-29e22196ca07",
-  "idRole": "f4175392-c139-4905-b8cc-ec015968f1a0",
-  "idRegion": "8fe0dbf5-4d97-4886-8fdf-4781c64e54a4"
+  "idArea": "c7e30e65-92a9-4a15-bd4d-ab65c64073c8",
+  "idRole": "3d5ce1c1-bc39-45c6-9f18-784c8cc3b60b",
+  "idRegion": "dab324c2-e972-4eba-90a3-98c842068d07"
 }
 
 ###ROLES DELETE
-DELETE http://localhost:1234/users/3a954f62-c563-4bc8-bc1a-3e0bff25f990
+DELETE http://localhost:1234/users/24ddbc66-2aa6-4c81-877f-27eac57ea32c
 
 ###ROLES UPDATE
-PUT http://localhost:1234/users/3a954f62-c563-4bc8-bc1a-3e0bff25f990
+PUT http://localhost:1234/users/24ddbc66-2aa6-4c81-877f-27eac57ea32c
 Content-Type: application/json
 
 {
   "userName": "Samuel Cabrera",
-  "userNick": "cabrerasam",
+  "userNick": "cabrerasam25",
   "passwordUser": "mi4v-aee3-5939",
-  "idArea": "dd74da3d-5330-453b-b97e-29e22196ca07",
-  "idRole": "f4175392-c139-4905-b8cc-ec015968f1a0",
-  "idRegion": "8fe0dbf5-4d97-4886-8fdf-4781c64e54a4"
+  "idArea": "c7e30e65-92a9-4a15-bd4d-ab65c64073c8",
+  "idRole": "3d5ce1c1-bc39-45c6-9f18-784c8cc3b60b",
+  "idRegion": "dab324c2-e972-4eba-90a3-98c842068d07"
 }
 
 ### *******SUBJECTS*******
@@ -130,14 +130,14 @@ Content-Type: application/json
     "facebook": "https://facebook.com",
     "x": "https://x.com"
   },
-  "idUser": "d6b6fdc4-e0a2-4558-9cc0-3f2cf3c4c698"
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
 }
 
 ###INDIVIDUAL DELETE
-DELETE http://localhost:1234/individuals/89531733-5541-4f1b-951b-828d0cd5c60a
+DELETE http://localhost:1234/individuals/93853051-1122-4683-8c08-1bffab7d3ca3
 
 ###INDIVIDUAL UPDATE
-PUT http://localhost:1234/individuals/89531733-5541-4f1b-951b-828d0cd5c60a
+PUT http://localhost:1234/individuals/93853051-1122-4683-8c08-1bffab7d3ca3
 Content-Type: application/json
 
 {
@@ -157,7 +157,7 @@ Content-Type: application/json
     "facebook": "https://facebook.com",
     "x": "https://x.com"
   },
-  "idUser": "d6b6fdc4-e0a2-4558-9cc0-3f2cf3c4c698"
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
 }
 
 ###COLLECTIVES
@@ -170,7 +170,35 @@ POST http://localhost:1234/collectives
 Content-Type: application/json
 
 {
-  "nameCollective": "CEADL",
+  "nameCollective": "MNR",
+  "originCollective": "Nacional",
+  "typeCollective": "Partido político",
+  "headquartersCollective": "El Alto",
+  "descriptionCollective": "En la actualidad el CEADL, es una creación colectiva de grupos de jóvenes y profesionales.",
+  "missionCollective": "Fortalecemos personas y organizaciones sociales en sus capacidades participativas y de incidencia para construir una cultura e institucionalidad democrática en el Estado y la sociedad civil, precautelando el ejercicio pleno de los Derechos Humanos y Ciudadanos a nivel local y nacional, en el marco de los Objetivos de Desarrollo Sostenible.",
+  "visionCollective": "Personas individuales y organizaciones de la sociedad civil, con énfasis en las juventudes, mujeres y pueblos indígenas, participan de forma organizada, democrática y equitativa en diversos espacios sociopolíticos para la reivindicación y el ejercicio pleno de sus Derechos Humanos y Ciudadanos.",
+  "networkCollective": {
+    "facebook": "https://facebook.com/ceadl",
+    "x": "https://x.com/ceadl"
+  },
+  "infAreaCollective": "El Alto, Lapaz, Sucre, Tarija",
+  "financingCollective": "SAIH Noruega",
+  "personalCollective": {
+    "director": "Juan Carlos Balderas",
+    "técnico": "Joel Ibarra Batallanos"
+  },
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+###COLLECTIVE DELETE
+DELETE http://localhost:1234/collectives/5e5d8402-707b-4bf2-a676-c18002cd7104
+
+###COLLECTIVE UPDATE
+PUT http://localhost:1234/collectives/58408223-bd1f-4a8b-b06c-1cfd559954f8
+Content-Type: application/json
+
+{
+  "nameCollective": "CEDLA",
   "originCollective": "Nacional",
   "typeCollective": "ONG",
   "headquartersCollective": "El Alto",
@@ -181,33 +209,94 @@ Content-Type: application/json
     "facebook": "https://facebook.com/ceadl",
     "x": "https://x.com/ceadl"
   },
-  "infAreaCollective": "",
-  "financingCollective": "",
+  "infAreaCollective": "El Alto, Lapaz, Sucre, Tarija",
+  "financingCollective": "SAIH Noruega",
   "personalCollective": {
     "director": "Juan Carlos Balderas",
     "técnico": "Joel Ibarra Batallanos"
   },
-  "idUser": "d6b6fdc4-e0a2-4558-9cc0-3f2cf3c4c698"
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
 }
 
-###INDIVIDUAL DELETE
-DELETE http://localhost:1234/individuals/89531733-5541-4f1b-951b-828d0cd5c60a
+### ****ASSOCIATIONS****
+###ASSOCIATIONS GET ALL
+GET http://localhost:1234/associations
 
-###INDIVIDUAL UPDATE
-PUT http://localhost:1234/individuals/89531733-5541-4f1b-951b-828d0cd5c60a
+###ASSOCIATIONS CREATE
+POST http://localhost:1234/associations
 Content-Type: application/json
 
 {
-  "nameCollective": "",
-  "originCollective": "",
-  "typeCollective": "",
-  "headquartersCollective": "",
-  "descriptionCollective": "",
-  "missionCollective": "",
-  "visionCollective": "",
-  "networkCollective": "",
-  "infAreaCollective": "",
-  "financingCollective": "",
-  "personalCollective": "",
-  "idUser": "d6b6fdc4-e0a2-4558-9cc0-3f2cf3c4c698"
+  "association": "Estado mayor del pueblo",
+  "idIndividual": "",
+  "idCollective": "37e8caae-bd72-41c4-b433-3bc0ebec83eb",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+###ASSOCIATIONS DELETE
+DELETE http://localhost:1234/associations/236c0fdf-b0b4-46fc-85a5-eb2e6dc8ffde
+
+###ASSOCIATIONS UPDATE
+PUT http://localhost:1234/associations/9e79d410-7baf-437f-8e2e-d97602fde6dd
+Content-Type: application/json
+
+{
+  "association": "Estado mayor del pueblo",
+  "idIndividual": "",
+  "idCollective": "37e8caae-bd72-41c4-b433-3bc0ebec83eb",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+### ****SPEACHS****
+###SPEACHS GET ALL
+GET http://localhost:1234/speachs
+
+###SPEACHS CREATE
+POST http://localhost:1234/speachs
+Content-Type: application/json
+
+{
+  "speach": "Dirección del discurso",
+  "idIndividual": "cdabc1d9-51a3-42fc-9774-0ab27a926cf7",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+###SPEACHS DELETE
+DELETE http://localhost:1234/speachs/0e2185e3-b1d0-441c-9651-0bfa1c5e8ad6
+
+###SPEACHS UPDATE
+PUT http://localhost:1234/speachs/0e2185e3-b1d0-441c-9651-0bfa1c5e8ad6
+Content-Type: application/json
+
+{
+  "speach": "Estado mayor",
+  "idIndividual": "cdabc1d9-51a3-42fc-9774-0ab27a926cf7",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+### ****WORKS****
+###WORKS GET ALL
+GET http://localhost:1234/works
+
+###WORKS CREATE
+POST http://localhost:1234/works
+Content-Type: application/json
+
+{
+  "work": "Dirección del discurso",
+  "idIndividual": "cdabc1d9-51a3-42fc-9774-0ab27a926cf7",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+###WORKS DELETE
+DELETE http://localhost:1234/works/0e2185e3-b1d0-441c-9651-0bfa1c5e8ad6
+
+###WORKS UPDATE
+PUT http://localhost:1234/works/0e2185e3-b1d0-441c-9651-0bfa1c5e8ad6
+Content-Type: application/json
+
+{
+  "work": "Estado mayor",
+  "idIndividual": "cdabc1d9-51a3-42fc-9774-0ab27a926cf7",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
 }

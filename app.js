@@ -6,6 +6,9 @@ import { createRoleRouter } from './routes/users/roles.js'
 import { createUserRouter } from './routes/users/users.js'
 import { createIndividualRouter } from './routes/subjects/individuals.js'
 import { createCollectiveRouter } from './routes/subjects/collectives.js'
+import { createAssociationRouter } from './routes/subjects/associations.js'
+import { createSpeachRouter } from './routes/subjects/speachs.js'
+import { createWorkRouter } from './routes/subjects/works.js'
 
 export const createApp = ({
   areaModel,
@@ -13,7 +16,10 @@ export const createApp = ({
   roleModel,
   userModel,
   individualModel,
-  collectiveModel
+  collectiveModel,
+  associationModel,
+  speachModel,
+  workModel
 }) => {
   const PORT = process.env.PORT ?? 1234
   const app = express()
@@ -28,6 +34,9 @@ export const createApp = ({
   app.use('/users', createUserRouter({ userModel }))
   app.use('/individuals', createIndividualRouter({ individualModel }))
   app.use('/collectives', createCollectiveRouter({ collectiveModel }))
+  app.use('/associations', createAssociationRouter({ associationModel }))
+  app.use('/speachs', createSpeachRouter({ speachModel }))
+  app.use('/works', createWorkRouter({ workModel }))
 
   app.use((req, res) => {
     res.status(404).send('<h1>404</h1>')
