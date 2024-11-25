@@ -1,4 +1,5 @@
 import { createApp } from './app.js'
+import { DiaryModel } from './models/reports/diary.js'
 import { AssociationModel } from './models/subjects/association.js'
 import { CollectiveModel } from './models/subjects/collective.js'
 import { IndividualModel } from './models/subjects/individual.js'
@@ -17,5 +18,6 @@ createApp({
   collectiveModel: CollectiveModel,
   associationModel: AssociationModel,
   speachModel: SpeachModel,
-  workModel: WorkModel
+  workModel: WorkModel,
+  diaryModel: DiaryModel
 })

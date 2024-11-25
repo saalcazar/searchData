@@ -5,9 +5,10 @@ const diarySchema = z.object({
   priorityDiary: z.string(),
   confideltialityDiary: z.string(),
   numDiary: z.string(),
-  dateDiary: z.date(),
+  dateDiary: z.string(),
   issueDiary: z.string(),
-  linkDiary: z.string().url()
+  linkDiary: z.string(),
+  idUser: z.string()
 })
 
 export function validateDiary (object) {

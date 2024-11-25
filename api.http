@@ -289,14 +289,53 @@ Content-Type: application/json
 }
 
 ###WORKS DELETE
-DELETE http://localhost:1234/works/0e2185e3-b1d0-441c-9651-0bfa1c5e8ad6
+DELETE http://localhost:1234/works/c94c4567-5d6f-4670-a825-c908a78dbe47
 
 ###WORKS UPDATE
-PUT http://localhost:1234/works/0e2185e3-b1d0-441c-9651-0bfa1c5e8ad6
+PUT http://localhost:1234/works/c94c4567-5d6f-4670-a825-c908a78dbe47
 Content-Type: application/json
 
 {
-  "work": "Estado mayor",
+  "work": "Presidente",
   "idIndividual": "cdabc1d9-51a3-42fc-9774-0ab27a926cf7",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+### *******REPORTS*******
+
+### ****DIARIES****
+###DIARIES GET ALL
+GET http://localhost:1234/diaries
+
+###DIARIES CREATE
+POST http://localhost:1234/diaries
+Content-Type: application/json
+
+{
+  "typeDiary": "Política",
+  "priorityDiary": "Media",
+  "confideltialityDiary": "Media",
+  "numDiary": "16",
+  "dateDiary": "2024-11-11",
+  "issueDiary": "Dolar, Diesel",
+  "linkDiary": "Dirección del informe",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+###DIARIES DELETE
+DELETE http://localhost:1234/diaries/13449c14-e2be-48c3-8ba2-0ead38a807f0
+
+###DIARIES UPDATE
+PUT http://localhost:1234/diaries/13449c14-e2be-48c3-8ba2-0ead38a807f0
+Content-Type: application/json
+
+{
+  "typeDiary": "Política",
+  "priorityDiary": "Alta",
+  "confideltialityDiary": "Alta",
+  "numDiary": "16",
+  "dateDiary": "2024-11-11",
+  "issueDiary": "Dolar, Diesel",
+  "linkDiary": "Dirección del informe",
   "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
 }
