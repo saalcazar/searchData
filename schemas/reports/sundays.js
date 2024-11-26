@@ -3,11 +3,12 @@ import z from 'zod'
 const sundaySchema = z.object({
   typeSunday: z.string(),
   prioritySunday: z.string(),
-  confideltialitySunday: z.string(),
+  confidentialitySunday: z.string(),
   numSunday: z.string(),
-  dateSunday: z.date(),
+  dateSunday: z.string(),
   issueSunday: z.string(),
-  linkSunday: z.string().url()
+  linkSunday: z.string(),
+  idUser: z.string()
 })
 
 export function validateSunday (object) {

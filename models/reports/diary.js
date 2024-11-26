@@ -14,7 +14,7 @@ export class DiaryModel {
     const {
       typeDiary,
       priorityDiary,
-      confideltialityDiary,
+      confidentialityDiary,
       numDiary,
       dateDiary,
       issueDiary,
@@ -26,7 +26,7 @@ export class DiaryModel {
     const [{ uuid }] = uuidResult.rows
 
     try {
-      await pool.query('SELECT create_diary($1, $2, $3, $4, $5, $6, $7, $8, $9)', [uuid, typeDiary, priorityDiary, confideltialityDiary, numDiary, dateDiary, issueDiary, linkDiary, idUser])
+      await pool.query('SELECT create_diary($1, $2, $3, $4, $5, $6, $7, $8, $9)', [uuid, typeDiary, priorityDiary, confidentialityDiary, numDiary, dateDiary, issueDiary, linkDiary, idUser])
     } catch (e) {
       throw new Error('Error to send information')
     }
@@ -38,7 +38,7 @@ export class DiaryModel {
     const {
       typeDiary,
       priorityDiary,
-      confideltialityDiary,
+      confidentialityDiary,
       numDiary,
       dateDiary,
       issueDiary,
@@ -47,7 +47,7 @@ export class DiaryModel {
     } = input
 
     try {
-      await pool.query('SELECT update_diary($1, $2, $3, $4, $5, $6, $7, $8, $9)', [idDiary, typeDiary, priorityDiary, confideltialityDiary, numDiary, dateDiary, issueDiary, linkDiary, idUser])
+      await pool.query('SELECT update_diary($1, $2, $3, $4, $5, $6, $7, $8, $9)', [idDiary, typeDiary, priorityDiary, confidentialityDiary, numDiary, dateDiary, issueDiary, linkDiary, idUser])
     } catch (e) {
       throw new Error('Error to send information')
     }

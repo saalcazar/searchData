@@ -10,6 +10,11 @@ import { createAssociationRouter } from './routes/subjects/associations.js'
 import { createSpeachRouter } from './routes/subjects/speachs.js'
 import { createWorkRouter } from './routes/subjects/works.js'
 import { createDiaryRouter } from './routes/reports/diaries.js'
+import { createSundayRouter } from './routes/reports/sundays.js'
+import { createAlertRouter } from './routes/reports/alerts.js'
+import { createMonitoringRouter } from './routes/reports/monitoring.js'
+import { createWeeklyRouter } from './routes/reports/weekly.js'
+import { createNgoWeeklyRouter } from './routes/reports/ngoWeekly.js'
 
 export const createApp = ({
   areaModel,
@@ -21,7 +26,12 @@ export const createApp = ({
   associationModel,
   speachModel,
   workModel,
-  diaryModel
+  diaryModel,
+  sundayModel,
+  alertModel,
+  monitoringModel,
+  weeklyModel,
+  ngoWeeklyModel
 }) => {
   const PORT = process.env.PORT ?? 1234
   const app = express()
@@ -40,6 +50,11 @@ export const createApp = ({
   app.use('/speachs', createSpeachRouter({ speachModel }))
   app.use('/works', createWorkRouter({ workModel }))
   app.use('/diaries', createDiaryRouter({ diaryModel }))
+  app.use('/sundays', createSundayRouter({ sundayModel }))
+  app.use('/alerts', createAlertRouter({ alertModel }))
+  app.use('/monitoring', createMonitoringRouter({ monitoringModel }))
+  app.use('/weekly', createWeeklyRouter({ weeklyModel }))
+  app.use('/ngoweekly', createNgoWeeklyRouter({ ngoWeeklyModel }))
 
   app.use((req, res) => {
     res.status(404).send('<h1>404</h1>')

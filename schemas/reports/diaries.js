@@ -3,7 +3,7 @@ import z from 'zod'
 const diarySchema = z.object({
   typeDiary: z.string(),
   priorityDiary: z.string(),
-  confideltialityDiary: z.string(),
+  confidentialityDiary: z.string(),
   numDiary: z.string(),
   dateDiary: z.string(),
   issueDiary: z.string(),

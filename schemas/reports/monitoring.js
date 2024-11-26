@@ -3,10 +3,12 @@ import z from 'zod'
 const monitoringSchema = z.object({
   typeMonitoring: z.string(),
   priorityMonitoring: z.string(),
-  confideltialityMonitoring: z.string(),
+  confidentialityMonitoring: z.string(),
   numMonitoring: z.string(),
-  dateMonitoring: z.date(),
-  linkMonitoring: z.string().url()
+  dateMonitoring: z.string(),
+  linkMonitoring: z.string(),
+  idArea: z.string(),
+  idUser: z.string()
 })
 
 export function validateMonitoring (object) {

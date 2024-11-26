@@ -3,11 +3,13 @@ import z from 'zod'
 const alertSchema = z.object({
   typeAlert: z.string(),
   priorityAlert: z.string(),
-  confideltialityAlert: z.string(),
+  confidentialityAlert: z.string(),
   numAlert: z.string(),
-  dateAlert: z.date(),
+  dateAlert: z.string(),
   issueAlert: z.string(),
-  linkAlert: z.string().url()
+  linkAlert: z.string(),
+  idArea: z.string(),
+  idUser: z.string()
 })
 
 export function validateAlert (object) {

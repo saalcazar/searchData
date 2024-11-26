@@ -2,8 +2,9 @@ import z from 'zod'
 
 const weeklySchema = z.object({
   numWeekly: z.string(),
-  dateWeekly: z.date(),
-  linkWeekly: z.string().url()
+  dateWeekly: z.string(),
+  linkWeekly: z.string(),
+  idUser: z.string()
 })
 
 export function validateWeekly (object) {
