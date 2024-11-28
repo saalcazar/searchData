@@ -5,9 +5,9 @@ const { Pool } = pg
 const config = {
   host: 'localhost',
   port: 5432,
-  database: 'data',
+  database: 'search',
   user: 'data',
-  password: 'mi4v-aee3-5939'
+  password: 'a1b2c3d4c0'
 }
 
 export const pool = new Pool(config)
