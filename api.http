@@ -134,7 +134,7 @@ Content-Type: application/json
 }
 
 ###INDIVIDUAL DELETE
-DELETE http://localhost:1234/individuals/93853051-1122-4683-8c08-1bffab7d3ca3
+DELETE http://localhost:1234/individuals/fbc4fc9b-f4a0-4872-9612-09ceff310ef6
 
 ###INDIVIDUAL UPDATE
 PUT http://localhost:1234/individuals/93853051-1122-4683-8c08-1bffab7d3ca3
