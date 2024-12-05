@@ -13,7 +13,7 @@ const individualSchema = z.object({
   placeBirthIndividual: z.string(),
   genderIndividual: z.string(),
   maritalIndividual: z.string(),
-  photoIndividual: z.string().url(),
+  photoIndividual: z.string(),
   partyIndividual: z.string(),
   workIndividual: z.string(),
   educationIndividual: z.string(),
