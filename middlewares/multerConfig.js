@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
     cb(null, uploadDir) // Carpeta donde se guardarán las fotos
   },
   filename: (req, file, cb) => {
-    const uniqueSuffix = `${Date.now()}-${file.originalname}`
+    const uniqueSuffix = `${file.originalname}`
     cb(null, uniqueSuffix) // Nombre único para evitar colisiones
   }
 })
@@ -29,4 +29,15 @@ const fileFilter = (req, file, cb) => {
 }
 
 // Exportar el middleware configurado
-export const upload = multer({ storage, fileFilter })
+export const upload = multer({ storage, fileFilter }).single('photo')
+
+export const uploadWithLogging = (req, res, next) => {
+  upload(req, res, (err) => {
+    if (err) {
+      console.error('Error en Multer:', err.message)
+      return res.status(400).json({ error: err.message })
+    }
+    console.log('Archivo recibido:', req.file) // Aquí puedes ver el archivo que se envía
+    next()
+  })
+}

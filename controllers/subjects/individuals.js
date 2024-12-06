@@ -11,10 +11,9 @@ export class IndividualController {
   }
 
   create = async (req, res) => {
-    req.body.photoIndividual = req.file ? `/uploads/photos/${req.file.filename}` : null
+    req.body.photoIndividual = req.file ? `/uploads/photos/${req.file.filename}` : req.body.photoIndividual
     const result = validateIndividual(req.body)
     if (!result.success) {
-      console.error(result.error.message, req.file)
       return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
     const newIndividual = await this.individualModel.create({ input: result.data })
