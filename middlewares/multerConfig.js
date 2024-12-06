@@ -29,15 +29,32 @@ const fileFilter = (req, file, cb) => {
 }
 
 // Exportar el middleware configurado
-export const upload = multer({ storage, fileFilter }).single('photo')
+export const upload = multer({ storage, fileFilter })
 
-export const uploadWithLogging = (req, res, next) => {
-  upload(req, res, (err) => {
-    if (err) {
-      console.error('Error en Multer:', err.message)
-      return res.status(400).json({ error: err.message })
-    }
-    console.log('Archivo recibido:', req.file) // Aquí puedes ver el archivo que se envía
-    next()
-  })
+const uploadfileDir = path.resolve('uploads/photos')
+if (!fs.existsSync(uploadfileDir)) {
+  fs.mkdirSync(uploadfileDir, { recursive: true })
 }
+
+// Configuración de almacenamiento
+const storageFile = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, uploadfileDir) // Carpeta donde se guardarán las fotos
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = `${file.originalname}`
+    cb(null, uniqueSuffix) // Nombre único para evitar colisiones
+  }
+})
+
+// Filtro para asegurar que el archivo sea una imagen
+const fileDocFilter = (req, file, cb) => {
+  const allowedTypes = ['apllication/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
+  if (!allowedTypes.includes(file.mimetype)) {
+    return cb(new Error('Only image files are allowed'), false)
+  }
+  cb(null, true)
+}
+
+// Exportar el middleware configurado
+export const uploadFile = multer({ storageFile, fileDocFilter })
