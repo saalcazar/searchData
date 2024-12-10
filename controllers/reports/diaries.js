@@ -11,8 +11,10 @@ export class DiaryController {
   }
 
   create = async (req, res) => {
+    req.body.linkDiary = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateDiary(req.body)
     if (!result.success) {
+      console.error(result.error)
       res.status(400).json({ error: JSON.parse(result.error.message) })
     }
     const newDiary = await this.diaryModel.create({ input: result.data })

@@ -19,7 +19,7 @@ const individualSchema = z.object({
   educationIndividual: z.string(),
   emailIndividual: z.string().email(),
   phoneIndividual: z.string(),
-  networksIndividual: z.record(z.string().url()),
+  networksIndividual: z.string(),
   idUser: z.string()
 })
 

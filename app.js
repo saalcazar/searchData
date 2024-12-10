@@ -38,6 +38,7 @@ export const createApp = ({
   app.disable('x-powered-by')
   app.use(express.json())
   app.use(corsMiddleware())
+  app.use('/uploads', express.static('uploads'))
 
   // ROUTES
   app.use('/areas', createAreaRouter({ areaModel }))
