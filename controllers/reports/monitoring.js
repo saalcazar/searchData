@@ -11,6 +11,7 @@ export class MonitoringController {
   }
 
   create = async (req, res) => {
+    req.body.linkMonitoring = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateMonitoring(req.body)
     if (!result.success) {
       res.status(400).json({ error: JSON.parse(result.error.message) })

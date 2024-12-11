@@ -11,6 +11,7 @@ export class SundayController {
   }
 
   create = async (req, res) => {
+    req.body.linkSunday = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateSunday(req.body)
     if (!result.success) {
       res.status(400).json({ error: JSON.parse(result.error.message) })

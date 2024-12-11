@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { AlertController } from '../../controllers/reports/alerts.js'
+import { uploadReports } from '../../middlewares/multerFileConfig.js'
 
 export const createAlertRouter = ({ alertModel }) => {
   const alertRouter = Router()
@@ -7,7 +8,7 @@ export const createAlertRouter = ({ alertModel }) => {
   const alertController = new AlertController({ alertModel })
 
   alertRouter.get('/', alertController.getAll)
-  alertRouter.post('/', alertController.create)
+  alertRouter.post('/', uploadReports.single('file'), alertController.create)
   alertRouter.delete('/:id', alertController.delete)
   alertRouter.put('/:id', alertController.update)
 

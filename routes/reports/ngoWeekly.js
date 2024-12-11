@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { NgoWeeklyController } from '../../controllers/reports/ngoWeekly.js'
+import { uploadReports } from '../../middlewares/multerFileConfig.js'
 
 export const createNgoWeeklyRouter = ({ ngoWeeklyModel }) => {
   const ngoWeeklyRouter = Router()
@@ -7,7 +8,7 @@ export const createNgoWeeklyRouter = ({ ngoWeeklyModel }) => {
   const ngoWeeklyController = new NgoWeeklyController({ ngoWeeklyModel })
 
   ngoWeeklyRouter.get('/', ngoWeeklyController.getAll)
-  ngoWeeklyRouter.post('/', ngoWeeklyController.create)
+  ngoWeeklyRouter.post('/', uploadReports.single('file'), ngoWeeklyController.create)
   ngoWeeklyRouter.delete('/:id', ngoWeeklyController.delete)
   ngoWeeklyRouter.put('/:id', ngoWeeklyController.update)
 
