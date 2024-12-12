@@ -14,6 +14,7 @@ import { UserModel } from './models/users/user.js'
 import { MonitoringModel } from './models/reports/monitoring.js'
 import { WeeklyModel } from './models/reports/weekly.js'
 import { NgoWeeklyModel } from './models/reports/ngoWeekly.js'
+import { LoginModel } from './models/login/login.js'
 createApp({
   areaModel: AreaModel,
   regionModel: RegionModel,
@@ -29,5 +30,6 @@ createApp({
   alertModel: AlertModel,
   monitoringModel: MonitoringModel,
   weeklyModel: WeeklyModel,
-  ngoWeeklyModel: NgoWeeklyModel
+  ngoWeeklyModel: NgoWeeklyModel,
+  loginModel: LoginModel
 })

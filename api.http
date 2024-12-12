@@ -70,6 +70,19 @@ Content-Type: application/json
 }
 
 ### ****USERS****
+
+###LOGIN USER
+POST http://localhost:1234/login
+Content-Type: application/json
+
+{
+  "userNick": "cabreraSam",
+  "userPassword": "a1b2c3d4c0"
+}
+
+###AUTHORIZED
+GET http://localhost:1234/login/authorized
+
 ###USERS GET ALL
 GET http://localhost:1234/users
 

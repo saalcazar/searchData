@@ -15,6 +15,8 @@ import { createAlertRouter } from './routes/reports/alerts.js'
 import { createMonitoringRouter } from './routes/reports/monitoring.js'
 import { createWeeklyRouter } from './routes/reports/weekly.js'
 import { createNgoWeeklyRouter } from './routes/reports/ngoWeekly.js'
+import { createLoginRouter } from './routes/login/login.js'
+import cookieParser from 'cookie-parser'
 
 export const createApp = ({
   areaModel,
@@ -31,12 +33,14 @@ export const createApp = ({
   alertModel,
   monitoringModel,
   weeklyModel,
-  ngoWeeklyModel
+  ngoWeeklyModel,
+  loginModel
 }) => {
   const PORT = process.env.PORT ?? 1234
   const app = express()
   app.disable('x-powered-by')
   app.use(express.json())
+  app.use(cookieParser())
   app.use(corsMiddleware())
   app.use('/uploads', express.static('uploads'))
 
@@ -56,6 +60,7 @@ export const createApp = ({
   app.use('/monitoring', createMonitoringRouter({ monitoringModel }))
   app.use('/weekly', createWeeklyRouter({ weeklyModel }))
   app.use('/ngoweekly', createNgoWeeklyRouter({ ngoWeeklyModel }))
+  app.use('/login', createLoginRouter({ loginModel }))
 
   app.use((req, res) => {
     res.status(404).send('<h1>404</h1>')
