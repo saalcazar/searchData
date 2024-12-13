@@ -7,6 +7,7 @@ export const createCollectiveRouter = ({ collectiveModel }) => {
   const collectiveController = new CollectiveController({ collectiveModel })
 
   collectiveRouter.get('/', collectiveController.getAll)
+  collectiveRouter.get('/:id', collectiveController.getById)
   collectiveRouter.post('/', collectiveController.create)
   collectiveRouter.delete('/:id', collectiveController.delete)
   collectiveRouter.put('/:id', collectiveController.update)

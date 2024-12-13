@@ -10,6 +10,12 @@ export class IndividualController {
     res.json(individuals)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const individual = await this.individualModel.getById({ id })
+    res.json(individual)
+  }
+
   create = async (req, res) => {
     req.body.photoIndividual = req.file ? `/uploads/photos/${req.file.filename}` : 'ruta por defecto'
     const result = validateIndividual(req.body)

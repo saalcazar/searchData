@@ -10,6 +10,15 @@ export class IndividualModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const individual = await pool.query('SELECT id_individual, name_individual, nationality_individual, birthdate_individual, place_birth_individual, gender_individual, marital_status_individual, photo_individual, party_individual, work_individual, education_individual, email_individual, phone_individual, networks_individual, id_user FROM individuals WHERE id_individual = $1', [id])
+      return individual.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const {
       nameIndividual,

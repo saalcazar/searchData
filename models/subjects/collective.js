@@ -10,6 +10,15 @@ export class CollectiveModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const collective = await pool.query('SELECT id_collective, name_collective, origin_collective, type_collective, headquarters_collective, description_collective, mission_collective, vision_collective, network_collective, inf_area_collective, financing_collective, personal_collective, id_user FROM collectives WHERE id_collective = $1', [id])
+      return collective.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const {
       nameCollective,

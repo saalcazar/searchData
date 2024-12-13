@@ -10,6 +10,12 @@ export class CollectiveController {
     res.json(collectives)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const collective = await this.collectiveModel.getById({ id })
+    res.json(collective)
+  }
+
   create = async (req, res) => {
     const result = validateCollective(req.body)
     if (!result.success) {
