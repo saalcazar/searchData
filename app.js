@@ -17,6 +17,7 @@ import { createWeeklyRouter } from './routes/reports/weekly.js'
 import { createNgoWeeklyRouter } from './routes/reports/ngoWeekly.js'
 import { createLoginRouter } from './routes/login/login.js'
 import cookieParser from 'cookie-parser'
+import { createIntermediateRouter } from './routes/intermediate/intermediate.js'
 
 export const createApp = ({
   areaModel,
@@ -34,7 +35,8 @@ export const createApp = ({
   monitoringModel,
   weeklyModel,
   ngoWeeklyModel,
-  loginModel
+  loginModel,
+  intermediateModel
 }) => {
   const PORT = process.env.PORT ?? 1234
   const app = express()
@@ -61,6 +63,7 @@ export const createApp = ({
   app.use('/weekly', createWeeklyRouter({ weeklyModel }))
   app.use('/ngoweekly', createNgoWeeklyRouter({ ngoWeeklyModel }))
   app.use('/login', createLoginRouter({ loginModel }))
+  app.use('/intermediate', createIntermediateRouter({ intermediateModel }))
 
   app.use((req, res) => {
     res.status(404).send('<h1>404</h1>')

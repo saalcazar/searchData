@@ -11,6 +11,7 @@ export class SpeachController {
   }
 
   create = async (req, res) => {
+    req.body.speach = req.file ? `/uploads/media/${req.file.filename}` : 'ruta por defecto'
     const result = validateSpeach(req.body)
     if (!result.success) {
       res.status(400).json({ error: JSON.parse(result.error.message) })
