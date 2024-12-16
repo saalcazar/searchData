@@ -525,3 +525,30 @@ Content-Type: application/json
   "linkNgoWeekly": "Dirección del informe",
   "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
 }
+
+### ****ISSUES****
+###ISSUES GET ALL
+GET http://localhost:1234/issues
+
+###ISSUES CREATE
+POST http://localhost:1234/issues
+Content-Type: application/json
+
+{
+  "issueReport": "Dolar, Diesel",
+  "intensityIssue": "7",
+  "idReport": "e134241a-d158-471c-874a-9d5aa79623f1" 
+}
+
+###ISSUES DELETE 
+DELETE http://localhost:1234/issues/9e79d410-7baf-437f-8e2e-d97602fde6dd
+
+###ISSUES UPDATE
+PUT http://localhost:1234/issues/9e79d410-7baf-437f-8e2e-d97602fde6dd
+Content-Type: application/json
+
+{
+  "issueReport": "Dolar, Diesel",
+  "intensityIssue": "7",
+  "idReport": "e134241a-d158-471c-874a-9d5aa79623f1" 
+}
