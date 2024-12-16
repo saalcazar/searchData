@@ -7,7 +7,6 @@ const monitoringSchema = z.object({
   numMonitoring: z.string(),
   dateMonitoring: z.string(),
   linkMonitoring: z.string(),
-  idArea: z.string(),
   idUser: z.string()
 })
 

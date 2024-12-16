@@ -9,7 +9,7 @@ POST http://localhost:1234/areas
 Content-Type: application/json
 
 {
-  "nameArea": "Internacional"
+  "nameArea": "Nacional"
 }
 
 ###AREAS DELETE
@@ -32,7 +32,7 @@ POST http://localhost:1234/regions
 Content-Type: application/json
 
 {
-  "nameRegion": "Oruro"
+  "nameRegion": "La Paz"
 }
 
 ###REGIONS DELETE
@@ -55,7 +55,7 @@ POST http://localhost:1234/roles
 Content-Type: application/json
 
 {
-  "nameRole": "tecnico"
+  "nameRole": "Director"
 }
 
 ###ROLES DELETE
@@ -91,12 +91,12 @@ POST http://localhost:1234/users
 Content-Type: application/json
 
 {
-  "userName": "Alejandro Cabrera",
-  "userNick": "cabrera25",
+  "userName": "Samuel Alejandro Alcazar",
+  "userNick": "saalcazar",
   "passwordUser": "a1b2c3d4c0",
-  "idArea": "c7e30e65-92a9-4a15-bd4d-ab65c64073c8",
-  "idRole": "3d5ce1c1-bc39-45c6-9f18-784c8cc3b60b",
-  "idRegion": "dab324c2-e972-4eba-90a3-98c842068d07"
+  "idArea": "5fdb6cfa-c511-4546-bd07-1a0cb7a51415",
+  "idRole": "fd8fa18d-ff4f-4459-9fdd-950bbfb12245",
+  "idRegion": "c97df937-9ac3-4a6f-9c5d-77fe4f0c59a4"
 }
 
 ###ROLES DELETE
@@ -270,8 +270,10 @@ Content-Type: application/json
 
 {
   "speach": "Dirección del discurso",
-  "idIndividual": "cdabc1d9-51a3-42fc-9774-0ab27a926cf7",
-  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+  "titleSpeach": "Estado mayor",
+  "dateSpeach": "2024-11-11",
+  "idIndividual": "60ce9c33-e05b-4391-91e2-0ffd80caf7dd",
+  "idUser": "45a2d827-7de0-4f25-b59f-0cb881331181"
 }
 
 ###SPEACHS DELETE

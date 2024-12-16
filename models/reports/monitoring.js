@@ -3,7 +3,7 @@ import { pool } from '../../helpers/dataBaseConect.js'
 export class MonitoringModel {
   static async getAll () {
     try {
-      const monitoring = await pool.query('SELECT id_monitoring, type_monitoring, priority_monitoring, confidentiality_monitoring, num_monitoring, date_monitoring, link_monitoring, id_area, id_user FROM monitoring')
+      const monitoring = await pool.query('SELECT id_monitoring, type_monitoring, priority_monitoring, confidentiality_monitoring, num_monitoring, date_monitoring, link_monitoring, id_user FROM monitoring')
       return monitoring.rows
     } catch (e) {
       throw new Error('Error to send information')
@@ -18,7 +18,6 @@ export class MonitoringModel {
       numMonitoring,
       dateMonitoring,
       linkMonitoring,
-      idArea,
       idUser
     } = input
 
@@ -26,12 +25,12 @@ export class MonitoringModel {
     const [{ uuid }] = uuidResult.rows
 
     try {
-      await pool.query('SELECT create_monitoring($1, $2, $3, $4, $5, $6, $7, $8, $9)', [uuid, typeMonitoring, priorityMonitoring, confidentialityMonitoring, numMonitoring, dateMonitoring, linkMonitoring, idArea, idUser])
+      await pool.query('SELECT create_monitoring($1, $2, $3, $4, $5, $6, $7, $8)', [uuid, typeMonitoring, priorityMonitoring, confidentialityMonitoring, numMonitoring, dateMonitoring, linkMonitoring, idUser])
     } catch (e) {
       console.error('error', e)
       throw new Error('Error to send information')
     }
-    const result = await pool.query('SELECT id_monitoring, type_monitoring, priority_monitoring, confidentiality_monitoring, num_monitoring, date_monitoring, link_monitoring, id_area, id_user FROM monitoring WHERE id_monitoring = $1', [uuid])
+    const result = await pool.query('SELECT id_monitoring, type_monitoring, priority_monitoring, confidentiality_monitoring, num_monitoring, date_monitoring, link_monitoring, id_user FROM monitoring WHERE id_monitoring = $1', [uuid])
     return result.rows
   }
 
@@ -43,16 +42,15 @@ export class MonitoringModel {
       numMonitoring,
       dateMonitoring,
       linkMonitoring,
-      idArea,
       idUser
     } = input
 
     try {
-      await pool.query('SELECT update_monitoring($1, $2, $3, $4, $5, $6, $7, $8, $9)', [idMonitoring, typeMonitoring, priorityMonitoring, confidentialityMonitoring, numMonitoring, dateMonitoring, linkMonitoring, idArea, idUser])
+      await pool.query('SELECT update_monitoring($1, $2, $3, $4, $5, $6, $7, $8)', [idMonitoring, typeMonitoring, priorityMonitoring, confidentialityMonitoring, numMonitoring, dateMonitoring, linkMonitoring, idUser])
     } catch (e) {
       throw new Error('Error to send information')
     }
-    const result = await pool.query('SELECT id_monitoring, type_monitoring, priority_monitoring, confidentiality_monitoring, num_monitoring, date_monitoring, link_monitoring, id_area, id_user FROM monitoring WHERE id_monitoring = $1', [idMonitoring])
+    const result = await pool.query('SELECT id_monitoring, type_monitoring, priority_monitoring, confidentiality_monitoring, num_monitoring, date_monitoring, link_monitoring, id_user FROM monitoring WHERE id_monitoring = $1', [idMonitoring])
     return result.rows
   }
 

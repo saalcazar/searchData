@@ -8,7 +8,6 @@ const alertSchema = z.object({
   dateAlert: z.string(),
   issueAlert: z.string(),
   linkAlert: z.string(),
-  idArea: z.string(),
   idUser: z.string()
 })
 
