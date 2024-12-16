@@ -541,7 +541,7 @@ Content-Type: application/json
 }
 
 ###ISSUES DELETE 
-DELETE http://localhost:1234/issues/9e79d410-7baf-437f-8e2e-d97602fde6dd
+DELETE http://localhost:1234/issues/273023ad-1b0e-4b62-a661-cec4b1ce5a21
 
 ###ISSUES UPDATE
 PUT http://localhost:1234/issues/9e79d410-7baf-437f-8e2e-d97602fde6dd
