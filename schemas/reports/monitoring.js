@@ -1,6 +1,7 @@
 import z from 'zod'
 
 const monitoringSchema = z.object({
+  idMonitoring: z.string(),
   typeMonitoring: z.string(),
   priorityMonitoring: z.string(),
   confidentialityMonitoring: z.string(),

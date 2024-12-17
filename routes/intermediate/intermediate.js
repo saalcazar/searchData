@@ -13,12 +13,12 @@ export const createIntermediateRouter = ({ intermediateModel }) => {
   intermediateRouter.post('/individualNgoWeekly', intermediateController.createIndividualNgoWeekly)
   intermediateRouter.post('/individualSunday', intermediateController.createIndividualSunday)
 
-  intermediateRouter.post('/collectivesDiaries', intermediateController.createCollectiveDiaries)
-  intermediateRouter.post('/collectivesMonitoring', intermediateController.createCollectiveMonitoring)
-  intermediateRouter.post('/collectivesAlert', intermediateController.createCollectiveAlert)
-  intermediateRouter.post('/collectivesWeekly', intermediateController.createCollectiveWeekly)
-  intermediateRouter.post('/collectivesNgoWeekly', intermediateController.createCollectiveNgoWeekly)
-  intermediateRouter.post('/collectivesSunday', intermediateController.createCollectiveSunday)
+  intermediateRouter.post('/collectiveDiaries', intermediateController.createCollectiveDiaries)
+  intermediateRouter.post('/collectiveMonitoring', intermediateController.createCollectiveMonitoring)
+  intermediateRouter.post('/collectiveAlert', intermediateController.createCollectiveAlert)
+  intermediateRouter.post('/collectiveWeekly', intermediateController.createCollectiveWeekly)
+  intermediateRouter.post('/collectiveNgoWeekly', intermediateController.createCollectiveNgoWeekly)
+  intermediateRouter.post('/collectiveSunday', intermediateController.createCollectiveSunday)
 
   return intermediateRouter
 }
