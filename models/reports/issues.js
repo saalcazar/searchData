@@ -49,7 +49,7 @@ export class IssueModel {
 
   static async delete ({ id }) {
     try {
-      await pool.query('DELETE FROM issues_report WHERE issue_report = $1', [id])
+      await pool.query('DELETE FROM issues_report WHERE id_report = $1', [id])
     } catch (e) {
       throw new Error('Error to send information')
     }
