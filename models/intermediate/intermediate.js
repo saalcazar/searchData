@@ -55,7 +55,7 @@ export class IntermediateModel {
 
   static async deleteIndividualMonitoring ({ id }) {
     try {
-      const result = await pool.query('DELETE FROM individuals_monitoring WHERE id_individual = $1', [id])
+      const result = await pool.query('DELETE FROM individuals_monitoring WHERE id_monitoring = $1', [id])
       return result.rows
     } catch (e) {
       throw new Error('Error to delete information')
