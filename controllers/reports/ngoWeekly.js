@@ -14,6 +14,7 @@ export class NgoWeeklyController {
     req.body.linkNgoWeekly = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateNgoWeekly(req.body)
     if (!result.success) {
+      console.error(result.error.message)
       res.status(400).json({ error: JSON.parse(result.error.message) })
     }
     const newNgoWeekly = await this.ngoWeeklyModel.create({ input: result.data })

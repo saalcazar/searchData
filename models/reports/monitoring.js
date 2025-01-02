@@ -12,7 +12,6 @@ export class MonitoringModel {
 
   static async create ({ input }) {
     const {
-      idMonitoring,
       typeMonitoring,
       priorityMonitoring,
       confidentialityMonitoring,
@@ -22,8 +21,11 @@ export class MonitoringModel {
       idUser
     } = input
 
+    const uuidResult = await pool.query('SELECT gen_random_uuid() uuid')
+    const [{ uuid }] = uuidResult.rows
+
     try {
-      const result = await pool.query('SELECT create_monitoring($1, $2, $3, $4, $5, $6, $7, $8)', [idMonitoring, typeMonitoring, priorityMonitoring, confidentialityMonitoring, numMonitoring, dateMonitoring, linkMonitoring, idUser])
+      const result = await pool.query('SELECT create_monitoring($1, $2, $3, $4, $5, $6, $7, $8)', [uuid, typeMonitoring, priorityMonitoring, confidentialityMonitoring, numMonitoring, dateMonitoring, linkMonitoring, idUser])
       return result.rows
     } catch (e) {
       console.error('error', e)

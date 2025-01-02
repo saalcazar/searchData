@@ -43,6 +43,7 @@ export class NgoWeeklyModel {
     try {
       await pool.query('SELECT update_ngo_weekly($1, $2, $3, $4, $5)', [idNgoWeekly, numNgoWeekly, dateNgoWeekly, linkNgoWeekly, idUser])
     } catch (e) {
+      console.error('error', e)
       throw new Error('Error to send information')
     }
     const result = await pool.query('SELECT id_ngo_weekly, num_ngo_weekly, date_ngo_weekly, link_ngo_weekly, id_user FROM ngo_weekly WHERE id_ngo_weekly = $1', [idNgoWeekly])
