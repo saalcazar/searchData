@@ -241,13 +241,13 @@ Content-Type: application/json
 
 {
   "association": "Estado mayor del pueblo",
-  "idIndividual": "",
-  "idCollective": "37e8caae-bd72-41c4-b433-3bc0ebec83eb",
-  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+  "idIndividual": "a60f2f67-b4df-4c2e-bd23-c074f7e229d1",
+  "idCollective": "ef9c86c8-e5b0-4caf-9be1-7b17d74cd4c3",
+  "idUser": "b4b23652-3a82-4d0d-a541-a1f88fd93f6f"
 }
 
 ###ASSOCIATIONS DELETE
-DELETE http://localhost:1234/associations/236c0fdf-b0b4-46fc-85a5-eb2e6dc8ffde
+DELETE http://localhost:1234/associations/4b921785-248d-4e22-b57e-5dc04544a2a9
 
 ###ASSOCIATIONS UPDATE
 PUT http://localhost:1234/associations/9e79d410-7baf-437f-8e2e-d97602fde6dd
