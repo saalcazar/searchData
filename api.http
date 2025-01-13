@@ -241,23 +241,19 @@ Content-Type: application/json
 
 {
   "association": "Estado mayor del pueblo",
-  "idIndividual": "a60f2f67-b4df-4c2e-bd23-c074f7e229d1",
-  "idCollective": "ef9c86c8-e5b0-4caf-9be1-7b17d74cd4c3",
   "idUser": "b4b23652-3a82-4d0d-a541-a1f88fd93f6f"
 }
 
 ###ASSOCIATIONS DELETE
-DELETE http://localhost:1234/associations/4b921785-248d-4e22-b57e-5dc04544a2a9
+DELETE http://localhost:1234/associations/d57125d9-f1fb-4efd-b4a3-1e8fe74fd41e
 
 ###ASSOCIATIONS UPDATE
-PUT http://localhost:1234/associations/9e79d410-7baf-437f-8e2e-d97602fde6dd
+PUT http://localhost:1234/associations/0ff0ce70-146d-46bf-8aaf-3694189b4f44
 Content-Type: application/json
 
 {
-  "association": "Estado mayor del pueblo",
-  "idIndividual": "",
-  "idCollective": "37e8caae-bd72-41c4-b433-3bc0ebec83eb",
-  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+  "association": "Estado Mayor del Pueblo",
+  "idUser": "b4b23652-3a82-4d0d-a541-a1f88fd93f6f"
 }
 
 ### ****SPEACHS****
@@ -551,4 +547,18 @@ Content-Type: application/json
   "issueReport": "Dolar, Diesel",
   "intensityIssue": "7",
   "idReport": "e134241a-d158-471c-874a-9d5aa79623f1" 
+}
+
+### ****SUBJECT ASSOCIATION****
+###SUBJECT ASSOCIATION GET ALL
+
+GET http://localhost:1234/subjects
+
+###SUBJECT ASSOCIATION CREATE
+POST http://localhost:1234/subjects
+Content-Type: application/json
+
+{
+  "idSubject": "ef9c86c8-e5b0-4caf-9be1-7b17d74cd4c3",
+  "idAssociation": "0ff0ce70-146d-46bf-8aaf-3694189b4f44"
 }

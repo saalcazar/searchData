@@ -17,6 +17,7 @@ import { NgoWeeklyModel } from './models/reports/ngoWeekly.js'
 import { LoginModel } from './models/login/login.js'
 import { IntermediateModel } from './models/intermediate/intermediate.js'
 import { IssueModel } from './models/reports/issues.js'
+import { SubjectModel } from './models/subjects/subject.js'
 createApp({
   areaModel: AreaModel,
   regionModel: RegionModel,
@@ -35,5 +36,6 @@ createApp({
   ngoWeeklyModel: NgoWeeklyModel,
   loginModel: LoginModel,
   intermediateModel: IntermediateModel,
-  issueModel: IssueModel
+  issueModel: IssueModel,
+  subjectModel: SubjectModel
 })
