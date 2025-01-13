@@ -50,6 +50,14 @@ export const createApp = ({
   app.use(corsMiddleware())
   app.use('/uploads', express.static('uploads'))
 
+  app.options('*', (req, res) => {
+    res.header('Access-Control-Allow-Origin', req.get('Origin') || '*')
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+    res.header('Access-Control-Allow-Headers', '*')
+    res.header('Access-Control-Allow-Credentials', 'true')
+    res.sendStatus(204) // Respuesta sin contenido
+  })
+
   // ROUTES
   app.use('/areas', createAreaRouter({ areaModel }))
   app.use('/regions', createRegionRouter({ regionModel }))
@@ -75,7 +83,7 @@ export const createApp = ({
     res.status(404).send('<h1>404</h1>')
   })
 
-  app.listen(PORT, () => {
-    console.log(`server listening on port http://localhost:${PORT}`)
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`server listening on port ${PORT}`)
   })
 }

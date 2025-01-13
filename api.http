@@ -55,7 +55,7 @@ POST http://localhost:1234/roles
 Content-Type: application/json
 
 {
-  "nameRole": "Director"
+  "nameRole": "Técnico"
 }
 
 ###ROLES DELETE
@@ -94,9 +94,9 @@ Content-Type: application/json
   "userName": "Samuel Alejandro Alcazar",
   "userNick": "saalcazar",
   "passwordUser": "a1b2c3d4c0",
-  "idArea": "5fdb6cfa-c511-4546-bd07-1a0cb7a51415",
-  "idRole": "fd8fa18d-ff4f-4459-9fdd-950bbfb12245",
-  "idRegion": "c97df937-9ac3-4a6f-9c5d-77fe4f0c59a4"
+  "idArea": "56328e57-8059-4446-a976-09f19d3b89b4",
+  "idRole": "6521da81-2224-4677-9cb5-1f1788bb469b",
+  "idRegion": "ce34f46d-e226-4fae-8ec6-6867b76d86c6"
 }
 
 ###ROLES DELETE
