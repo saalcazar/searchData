@@ -10,6 +10,15 @@ export class RoleModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const role = await pool.query('SELECT id_role, create_role, name_role FROM roles WHERE id_role = $1', [id])
+      return role.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const { nameRole } = input
 

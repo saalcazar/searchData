@@ -10,6 +10,15 @@ export class RoleController {
     res.json(roles)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const role = await this.roleModel.getById({ id })
+    if (role.length === 0) {
+      return res.status(400).json({ message: 'Role not found' })
+    }
+    res.json(role)
+  }
+
   create = async (req, res) => {
     const result = validateRole(req.body)
     if (!result.success) {

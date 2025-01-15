@@ -7,6 +7,7 @@ export const createRoleRouter = ({ roleModel }) => {
   const roleController = new RoleController({ roleModel })
 
   roleRouter.get('/', roleController.getAll)
+  roleRouter.get('/:id', roleController.getById)
   roleRouter.post('/', roleController.create)
   roleRouter.delete('/:id', roleController.delete)
   roleRouter.put('/:id', roleController.update)
