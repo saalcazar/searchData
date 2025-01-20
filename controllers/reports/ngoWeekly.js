@@ -10,6 +10,12 @@ export class NgoWeeklyController {
     res.status(201).json(ngoWeekly)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const ngoWeekly = await this.ngoWeeklyModel.getById({ id })
+    res.status(201).json(ngoWeekly)
+  }
+
   create = async (req, res) => {
     req.body.linkNgoWeekly = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateNgoWeekly(req.body)

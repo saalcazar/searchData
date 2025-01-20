@@ -10,6 +10,15 @@ export class SpeachModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const speach = await pool.query('SELECT id_speach, title_speach, speach, date_speach, id_individual, id_user FROM speachs WHERE id_speach = $1', [id])
+      return speach.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const {
       titleSpeach,

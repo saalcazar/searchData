@@ -8,6 +8,7 @@ export const createMonitoringRouter = ({ monitoringModel }) => {
   const monitoringController = new MonitoringController({ monitoringModel })
 
   monitoringRouter.get('/', monitoringController.getAll)
+  monitoringRouter.get('/:id', monitoringController.getById)
   monitoringRouter.post('/', uploadReports.single('file'), monitoringController.create)
   monitoringRouter.delete('/:id', monitoringController.delete)
   monitoringRouter.put('/:id', monitoringController.update)

@@ -8,6 +8,7 @@ export const createWeeklyRouter = ({ weeklyModel }) => {
   const weeklyController = new WeeklyController({ weeklyModel })
 
   weeklyRouter.get('/', weeklyController.getAll)
+  weeklyRouter.get('/:id', weeklyController.getById)
   weeklyRouter.post('/', uploadReports.single('file'), weeklyController.create)
   weeklyRouter.delete('/:id', weeklyController.delete)
   weeklyRouter.put('/:id', weeklyController.update)

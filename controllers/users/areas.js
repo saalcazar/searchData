@@ -10,6 +10,15 @@ export class AreaController {
     res.json(areas)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const area = await this.areaModel.getById({ id })
+    if (area.length === 0) {
+      return res.status(400).json({ message: 'Area not found' })
+    }
+    return res.json(area)
+  }
+
   create = async (req, res) => {
     const result = validateArea(req.body)
     if (!result.success) {

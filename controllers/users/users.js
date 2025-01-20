@@ -10,6 +10,15 @@ export class UserController {
     res.json(users)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const user = await this.userModel.getById({ id })
+    if (user.length === 0) {
+      return res.status(400).json({ message: 'User not found' })
+    }
+    res.json(user)
+  }
+
   create = async (req, res) => {
     const result = validateUser(req.body)
     if (!result.success) {

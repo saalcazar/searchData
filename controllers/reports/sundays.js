@@ -10,6 +10,12 @@ export class SundayController {
     res.status(201).json(sundays)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const sunday = await this.sundayModel.getById({ id })
+    res.status(201).json(sunday)
+  }
+
   create = async (req, res) => {
     req.body.linkSunday = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateSunday(req.body)

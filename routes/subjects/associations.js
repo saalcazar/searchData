@@ -7,6 +7,7 @@ export const createAssociationRouter = ({ associationModel }) => {
   const associationController = new AssociationController({ associationModel })
 
   associationRouter.get('/', associationController.getAll)
+  associationRouter.get('/:id', associationController.getById)
   associationRouter.post('/', associationController.create)
   associationRouter.delete('/:id', associationController.delete)
   associationRouter.put('/:id', associationController.update)

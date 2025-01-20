@@ -10,6 +10,12 @@ export class SpeachController {
     res.status(201).json(speachs)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const speach = await this.speachModel.getById({ id })
+    res.status(201).json(speach)
+  }
+
   create = async (req, res) => {
     req.body.speach = req.file ? `/uploads/media/${req.file.filename}` : 'ruta por defecto'
     const result = validateSpeach(req.body)

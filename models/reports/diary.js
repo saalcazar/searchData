@@ -10,6 +10,15 @@ export class DiaryModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const result = await pool.query('SELECT id_diary, type_diary, priority_diary, confidentiality_diary, num_diary, date_diary, issue_diary, link_diary, id_user FROM diaries WHERE id_diary = $1', [id])
+      return result.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const {
       typeDiary,

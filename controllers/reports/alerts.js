@@ -10,6 +10,12 @@ export class AlertController {
     res.status(201).json(alerts)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const alert = await this.alertModel.getById({ id })
+    res.status(201).json(alert)
+  }
+
   create = async (req, res) => {
     req.body.linkAlert = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateAlert(req.body)

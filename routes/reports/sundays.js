@@ -8,6 +8,7 @@ export const createSundayRouter = ({ sundayModel }) => {
   const sundayController = new SundayController({ sundayModel })
 
   sundayRouter.get('/', sundayController.getAll)
+  sundayRouter.get('/:id', sundayController.getById)
   sundayRouter.post('/', uploadReports.single('file'), sundayController.create)
   sundayRouter.delete('/:id', sundayController.delete)
   sundayRouter.put('/:id', sundayController.update)

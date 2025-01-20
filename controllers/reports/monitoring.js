@@ -10,6 +10,12 @@ export class MonitoringController {
     res.status(201).json(monitoring)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const monitoring = await this.monitoringModel.getById({ id })
+    res.status(201).json(monitoring)
+  }
+
   create = async (req, res) => {
     req.body.linkMonitoring = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateMonitoring(req.body)

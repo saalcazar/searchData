@@ -10,6 +10,12 @@ export class WeeklyController {
     res.status(201).json(weekly)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const weekly = await this.weeklyModel.getById({ id })
+    res.status(201).json(weekly)
+  }
+
   create = async (req, res) => {
     req.body.linkWeekly = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateWeekly(req.body)

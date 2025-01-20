@@ -10,6 +10,12 @@ export class DiaryController {
     res.status(201).json(diaries)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const diary = await this.diaryModel.getById({ id })
+    res.status(201).json(diary)
+  }
+
   create = async (req, res) => {
     req.body.linkDiary = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateDiary(req.body)

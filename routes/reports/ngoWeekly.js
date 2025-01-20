@@ -8,6 +8,7 @@ export const createNgoWeeklyRouter = ({ ngoWeeklyModel }) => {
   const ngoWeeklyController = new NgoWeeklyController({ ngoWeeklyModel })
 
   ngoWeeklyRouter.get('/', ngoWeeklyController.getAll)
+  ngoWeeklyRouter.get('/:id', ngoWeeklyController.getById)
   ngoWeeklyRouter.post('/', uploadReports.single('file'), ngoWeeklyController.create)
   ngoWeeklyRouter.delete('/:id', ngoWeeklyController.delete)
   ngoWeeklyRouter.put('/:id', ngoWeeklyController.update)

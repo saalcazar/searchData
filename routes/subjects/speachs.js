@@ -8,6 +8,7 @@ export const createSpeachRouter = ({ speachModel }) => {
   const speachController = new SpeachController({ speachModel })
 
   speachRouter.get('/', speachController.getAll)
+  speachRouter.get('/:id', speachController.getById)
   speachRouter.post('/', uploadMedia.single('media'), speachController.create)
   speachRouter.delete('/:id', speachController.delete)
   speachRouter.put('/:id', speachController.update)

@@ -11,6 +11,15 @@ export class NgoWeeklyModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const result = await pool.query('SELECT id_ngo_weekly, num_ngo_weekly, date_ngo_weekly, link_ngo_weekly, id_user FROM ngo_weekly WHERE id_ngo_weekly = $1', [id])
+      return result.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const {
       numNgoWeekly,

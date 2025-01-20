@@ -10,6 +10,15 @@ export class AreaModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const area = await pool.query('SELECT id_area, name_area FROM areas WHERE id_area = $1', [id])
+      return area.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const { nameArea } = input
 

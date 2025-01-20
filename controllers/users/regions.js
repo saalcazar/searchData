@@ -10,6 +10,15 @@ export class RegionController {
     res.json(regions)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const region = await this.regionModel.getById({ id })
+    if (region.length === 0) {
+      return res.status(400).json({ message: 'Region not found' })
+    }
+    return res.json(region)
+  }
+
   create = async (req, res) => {
     const result = validateRegion(req.body)
     if (!result.success) {

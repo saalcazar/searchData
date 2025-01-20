@@ -8,6 +8,7 @@ export const createAlertRouter = ({ alertModel }) => {
   const alertController = new AlertController({ alertModel })
 
   alertRouter.get('/', alertController.getAll)
+  alertRouter.get('/:id', alertController.getById)
   alertRouter.post('/', uploadReports.single('file'), alertController.create)
   alertRouter.delete('/:id', alertController.delete)
   alertRouter.put('/:id', alertController.update)

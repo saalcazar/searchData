@@ -10,6 +10,15 @@ export class RegionModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const region = await pool.query('SELECT id_region, name_region FROM regions WHERE id_region = $1', [id])
+      return region.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const { nameRegion } = input
 

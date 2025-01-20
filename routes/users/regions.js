@@ -7,6 +7,7 @@ export const createRegionRouter = ({ regionModel }) => {
   const regionController = new RegionController({ regionModel })
 
   regionRouter.get('/', regionController.getAll)
+  regionRouter.get('/:id', regionController.getById)
   regionRouter.post('/', regionController.create)
   regionRouter.delete('/:id', regionController.delete)
   regionRouter.put('/:id', regionController.update)

@@ -10,6 +10,15 @@ export class AssociationModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const association = await pool.query('SELECT id_association, association, id_user FROM associations WHERE id_association = $1', [id])
+      return association.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const {
       association,

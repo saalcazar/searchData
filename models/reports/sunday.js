@@ -10,6 +10,15 @@ export class SundayModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const result = await pool.query('SELECT id_sunday, type_sunday, priority_sunday, confidentiality_sunday, num_sunday, date_sunday, issue_sunday, link_sunday, id_user FROM sundays WHERE id_sunday = $1', [id])
+      return result.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const {
       typeSunday,

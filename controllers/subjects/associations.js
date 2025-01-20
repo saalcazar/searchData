@@ -10,6 +10,12 @@ export class AssociationController {
     res.status(201).json(associations)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const association = await this.associationModel.getById({ id })
+    res.status(201).json(association)
+  }
+
   create = async (req, res) => {
     const result = validateAssociation(req.body)
     if (!result.success) {

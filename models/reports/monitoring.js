@@ -10,6 +10,15 @@ export class MonitoringModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const result = await pool.query('SELECT id_monitoring, type_monitoring, priority_monitoring, confidentiality_monitoring, num_monitoring, date_monitoring, link_monitoring, id_user FROM monitoring WHERE id_monitoring = $1', [id])
+      return result.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const {
       typeMonitoring,

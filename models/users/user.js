@@ -10,6 +10,15 @@ export class UserModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const user = await pool.query('SELECT id_user, user_name, user_nick, id_area, id_role, id_region, id_super_user FROM users WHERE id_user = $1', [id])
+      return user.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const {
       userName,

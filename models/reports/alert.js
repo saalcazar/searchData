@@ -10,6 +10,15 @@ export class AlertModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const alert = await pool.query('SELECT id_alert, type_alert, priority_alert, confidentiality_alert, num_alert, date_alert, issue_alert, link_alert, id_user FROM alerts WHERE id_alert = $1', [id])
+      return alert.rows
+    } catch (e) {
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const {
       typeAlert,
