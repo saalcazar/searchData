@@ -40,6 +40,7 @@ export class IndividualController {
     const { id } = req.params
     const result = validateIndividual(req.body)
     if (!result.success) {
+      console.error(result.error)
       return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
     const newIndividual = await this.individualModel.update({ idIndividual: id, input: result.data })

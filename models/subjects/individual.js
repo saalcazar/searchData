@@ -70,6 +70,7 @@ export class IndividualModel {
     try {
       await pool.query('SELECT update_individual($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)', [idIndividual, nameIndividual, nationalityIndividual, birthDateIndividual, placeBirthIndividual, genderIndividual, maritalIndividual, photoIndividual, partyIndividual, workIndividual, educationIndividual, emailIndividual, phoneIndividual, networksIndividual, idUser])
     } catch (e) {
+      console.error(e)
       throw new Error('Error to send information')
     }
     const result = await pool.query('SELECT id_individual, name_individual, nationality_individual, birthdate_individual, place_birth_individual, gender_individual, marital_status_individual, photo_individual, party_individual, work_individual, education_individual, email_individual, phone_individual, networks_individual, id_user FROM individuals WHERE id_individual = $1', [idIndividual])

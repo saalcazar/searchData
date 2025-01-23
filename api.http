@@ -122,6 +122,9 @@ Content-Type: application/json
 ###INDIVIDUAL GETALL
 GET http://localhost:1234/individuals
 
+###INDIVIDUAL GET
+GET http://localhost:1234/individuals/a60f2f67-b4df-4c2e-bd23-c074f7e229d1
+
 ###INDIVIDUAL CREATE
 POST http://localhost:1234/individuals
 Content-Type: application/json
