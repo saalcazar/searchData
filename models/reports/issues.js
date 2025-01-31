@@ -11,6 +11,16 @@ export class IssueModel {
     }
   }
 
+  static async getById ({ id }) {
+    try {
+      const issues = await pool.query('SELECT id_issues_report, issue_report, intensity_issues_report, id_report FROM issues_report WHERE id_report = $1', [id])
+      return issues.rows
+    } catch (e) {
+      console.error('error', e)
+      throw new Error('Error to send information')
+    }
+  }
+
   static async create ({ input }) {
     const {
       issueReport,

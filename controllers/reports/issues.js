@@ -10,6 +10,12 @@ export class IssueController {
     res.status(201).json(issues)
   }
 
+  getById = async (req, res) => {
+    const { id } = req.params
+    const issues = await this.issueModel.getById({ id })
+    res.status(201).json(issues)
+  }
+
   create = async (req, res) => {
     const result = validateIssue(req.body)
     if (!result.success) {

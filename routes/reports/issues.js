@@ -7,6 +7,7 @@ export const createIssueRouter = ({ issueModel }) => {
   const issuesController = new IssueController({ issueModel })
 
   issuesRouter.get('/', issuesController.getAll)
+  issuesRouter.get('/:id', issuesController.getById)
   issuesRouter.post('/', issuesController.create)
   issuesRouter.delete('/:id', issuesController.delete)
   issuesRouter.put('/:id', issuesController.update)
