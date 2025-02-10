@@ -187,6 +187,7 @@ Content-Type: application/json
 
 {
   "nameCollective": "MNR",
+  "logoCollective": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
   "originCollective": "Nacional",
   "typeCollective": "Partido político",
   "headquartersCollective": "El Alto",
@@ -203,11 +204,11 @@ Content-Type: application/json
     "director": "Juan Carlos Balderas",
     "técnico": "Joel Ibarra Batallanos"
   },
-  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+  "idUser": "a80ff520-4086-4bc0-ac38-2f8efa39d4e4"
 }
 
 ###COLLECTIVE DELETE
-DELETE http://localhost:1234/collectives/5e5d8402-707b-4bf2-a676-c18002cd7104
+DELETE http://localhost:1234/collectives/43683ce3-7077-4a31-bae0-7f2d687433ab
 
 ###COLLECTIVE UPDATE
 PUT http://localhost:1234/collectives/58408223-bd1f-4a8b-b06c-1cfd559954f8

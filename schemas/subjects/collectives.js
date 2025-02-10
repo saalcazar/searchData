@@ -5,6 +5,10 @@ const collectiveSchema = z.object({
     invalid_type_error: 'Name Collective must be a string',
     required_error: 'Name collective is required'
   }),
+  logoCollective: z.string({
+    invalid_type_error: 'Logo Collective must be a string',
+    required_error: 'Logo collective is required'
+  }),
   originCollective: z.string({
     invalid_type_error: 'origin Collective must be a string',
     required_error: 'origin indivudual is required'
@@ -14,10 +18,10 @@ const collectiveSchema = z.object({
   descriptionCollective: z.string(),
   missionCollective: z.string(),
   visionCollective: z.string(),
-  networkCollective: z.record(z.string().url()),
+  networkCollective: z.string(),
   infAreaCollective: z.string(),
   financingCollective: z.string(),
-  personalCollective: z.record(z.string()),
+  personalCollective: z.string(),
   idUser: z.string()
 })
 

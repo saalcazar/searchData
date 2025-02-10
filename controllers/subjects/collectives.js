@@ -17,9 +17,11 @@ export class CollectiveController {
   }
 
   create = async (req, res) => {
+    req.body.logoCollective = req.file ? `/uploads/photos/${req.file.filename}` : 'ruta por defecto'
     const result = validateCollective(req.body)
     if (!result.success) {
-      res.status(400).json({ error: JSON.parse(result.error.message) })
+      console.error(result.error)
+      return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
     const newCollective = await this.collectiveModel.create({ input: result.data })
     res.status(201).json(newCollective)
