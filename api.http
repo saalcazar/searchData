@@ -208,7 +208,7 @@ Content-Type: application/json
 }
 
 ###COLLECTIVE DELETE
-DELETE http://localhost:1234/collectives/43683ce3-7077-4a31-bae0-7f2d687433ab
+DELETE http://localhost:1234/collectives/f027e4e3-e73f-4531-ad16-cf2203f88b7d
 
 ###COLLECTIVE UPDATE
 PUT http://localhost:1234/collectives/58408223-bd1f-4a8b-b06c-1cfd559954f8
