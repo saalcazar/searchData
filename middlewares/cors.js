@@ -3,10 +3,12 @@ import cors from 'cors'
 const ACCEPTED_ORIGINS = [
   'http://localhost:5173',
   'http://192.168.40.113:5173',
+  'http://192.168.50.101:5173',
   'http://192.168.0.16:5173',
   'http://192.168.0.16:5174',
   'http://localhost:1234',
   'http://192.168.40.113:1234',
+  'http://192.168.50.101:1234',
   'http://192.168.0.16:1234',
   'https://searchdata.bo'
 ]
