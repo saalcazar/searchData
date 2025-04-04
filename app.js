@@ -20,7 +20,8 @@ import cookieParser from 'cookie-parser'
 import { createIntermediateRouter } from './routes/intermediate/intermediate.js'
 import { createIssueRouter } from './routes/reports/issues.js'
 import { createSubjectRouter } from './routes/subjects/subjects.js'
-
+import { createAdminSubjectRouter } from './routes/admin/subjects.js'
+import { createAdminReportRouter } from './routes/admin/reports.js'
 export const createApp = ({
   areaModel,
   regionModel,
@@ -40,7 +41,9 @@ export const createApp = ({
   loginModel,
   intermediateModel,
   issueModel,
-  subjectModel
+  subjectModel,
+  adminSubjectModel,
+  adminReportModel
 }) => {
   const PORT = process.env.PORT ?? 1234
   const app = express()
@@ -78,6 +81,8 @@ export const createApp = ({
   app.use('/intermediate', createIntermediateRouter({ intermediateModel }))
   app.use('/issues', createIssueRouter({ issueModel }))
   app.use('/subjects', createSubjectRouter({ subjectModel }))
+  app.use('/admin/subjects', createAdminSubjectRouter({ adminSubjectModel }))
+  app.use('/admin/reports', createAdminReportRouter({ adminReportModel }))
 
   app.use((req, res) => {
     res.status(404).send('<h1>404</h1>')

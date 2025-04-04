@@ -18,6 +18,8 @@ import { LoginModel } from './models/login/login.js'
 import { IntermediateModel } from './models/intermediate/intermediate.js'
 import { IssueModel } from './models/reports/issues.js'
 import { SubjectModel } from './models/subjects/subject.js'
+import { AdminSubjectModel } from './models/admin/subjects.js'
+import { AdminReportModel } from './models/admin/reports.js'
 createApp({
   areaModel: AreaModel,
   regionModel: RegionModel,
@@ -37,5 +39,7 @@ createApp({
   loginModel: LoginModel,
   intermediateModel: IntermediateModel,
   issueModel: IssueModel,
-  subjectModel: SubjectModel
+  subjectModel: SubjectModel,
+  adminSubjectModel: AdminSubjectModel,
+  adminReportModel: AdminReportModel
 })
