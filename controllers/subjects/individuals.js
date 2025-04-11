@@ -38,6 +38,9 @@ export class IndividualController {
 
   update = async (req, res) => {
     const { id } = req.params
+    req.body.photoIndividual = req.file
+      ? `/uploads/photos/${req.file.filename}`
+      : req.body.currentPhotoPath
     const result = validateIndividual(req.body)
     if (!result.success) {
       console.error(result.error)
@@ -45,5 +48,11 @@ export class IndividualController {
     }
     const newIndividual = await this.individualModel.update({ idIndividual: id, input: result.data })
     res.status(201).json(newIndividual)
+  }
+
+  deletePhoto = async (req, res) => {
+    const { id, photoName } = req.params
+    console.log(id, photoName)
+    res.status(201).json('Photo deleted')
   }
 }
