@@ -11,7 +11,8 @@ export const createIndividualRouter = ({ individualModel }) => {
   individualRouter.get('/:id', individualController.getById)
   individualRouter.post('/', upload.single('photo'), individualController.create)
   individualRouter.delete('/:id', individualController.delete)
-  individualRouter.put('/:id', individualController.update)
+  individualRouter.put('/:id', upload.single('photo'), individualController.update)
+  individualRouter.delete('/:id/uploads/photos/:photoName', individualController.deletePhoto)
 
   return individualRouter
 }
