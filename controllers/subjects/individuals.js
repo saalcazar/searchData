@@ -1,4 +1,7 @@
 import { validateIndividual } from '../../schemas/subjects/individuals.js'
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 export class IndividualController {
   constructor ({ individualModel }) {
@@ -52,7 +55,18 @@ export class IndividualController {
 
   deletePhoto = async (req, res) => {
     const { id, photoName } = req.params
-    console.log(id, photoName)
-    res.status(201).json('Photo deleted')
+    const __filename = fileURLToPath(import.meta.url)
+    const PROJECT_ROOT = path.join(__filename, '..', '..', '..')
+    const UPLOADS_DIR = path.join(PROJECT_ROOT, 'uploads')
+    const PHOTOS_DIR = path.join(UPLOADS_DIR, 'photos')
+    const photoPath = path.join(PHOTOS_DIR, photoName)
+    console.log(`Deleting photo ${photoPath} from subject ${id}`)
+    try {
+      fs.unlinkSync(photoPath)
+      console.log(`File ${photoName} deleted from subject ${id}`)
+      res.status(201).json('Photo deleted')
+    } catch (err) {
+      console.error('Something wrong happened removing the file', err)
+    }
   }
 }
