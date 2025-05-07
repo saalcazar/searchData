@@ -20,6 +20,7 @@ import { IssueModel } from './models/reports/issues.js'
 import { SubjectModel } from './models/subjects/subject.js'
 import { AdminSubjectModel } from './models/admin/subjects.js'
 import { AdminReportModel } from './models/admin/reports.js'
+import { IndividualsReportModel } from './models/subjectsReport/individualsReport.js'
 createApp({
   areaModel: AreaModel,
   regionModel: RegionModel,
@@ -41,5 +42,6 @@ createApp({
   issueModel: IssueModel,
   subjectModel: SubjectModel,
   adminSubjectModel: AdminSubjectModel,
-  adminReportModel: AdminReportModel
+  adminReportModel: AdminReportModel,
+  individualsReportModel: IndividualsReportModel
 })
