@@ -86,7 +86,7 @@ GET http://localhost:1234/login/authorized
 ###USERS GET ALL
 GET http://localhost:1234/users
 
-###USER CREATE
+###ROLES CREATE
 POST http://localhost:1234/users
 Content-Type: application/json
 
@@ -99,10 +99,10 @@ Content-Type: application/json
   "idRegion": "ce34f46d-e226-4fae-8ec6-6867b76d86c6"
 }
 
-###USER DELETE
+###ROLES DELETE
 DELETE http://localhost:1234/users/24ddbc66-2aa6-4c81-877f-27eac57ea32c
 
-###USER UPDATE
+###ROLES UPDATE
 PUT http://localhost:1234/users/24ddbc66-2aa6-4c81-877f-27eac57ea32c
 Content-Type: application/json
 
@@ -318,38 +318,152 @@ Content-Type: application/json
 
 ### *******REPORTS*******
 
-##REPORT GET ALL
-GET http://localhost:1234/reports
+### ****DIARIES****
+###DIARIES GET ALL
+GET http://localhost:1234/diaries
 
-###REPORT CREATE
-POST http://localhost:1234/reports
+###DIARIES CREATE
+POST http://localhost:1234/diaries
 Content-Type: application/json
 
 {
-  "areaReport": "nacional",
-  "typeReport": "Monitoreo",
-  "priorityReport": "Media",
-  "confidentialityReport": "Media",
-  "numReport": "16",
-  "dateReport": "2024-11-11",
-  "linkReport": "Dirección del informe",
-  "idUser": "4e6330b8-7f5f-4dcf-8088-7b44a800bd64"
+  "typeDiary": "Política",
+  "priorityDiary": "Media",
+  "confidentialityDiary": "Media",
+  "numDiary": "16",
+  "dateDiary": "2024-11-11",
+  "issueDiary": "Dolar, Diesel",
+  "linkDiary": "Dirección del informe",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
 }
 
-##REPORT DELETE
-DELETE http://localhost:1234/reports/9e1ee95e-989f-4b91-b105-dd0762675457
+###DIARIES DELETE
+DELETE http://localhost:1234/diaries/c6d0e95d-a6c2-4f4b-a678-08d5f8ccd78d
 
-##REPORT UPDATE
-PUT http://localhost:1234/reports/9e1ee95e-989f-4b91-b105-dd0762675457
+###DIARIES UPDATE
+PUT http://localhost:1234/diaries/c6d0e95d-a6c2-4f4b-a678-08d5f8ccd78d
 Content-Type: application/json
 
 {
-  "typeReport": "Internacional",
-  "priorityReport": "Alta",
-  "confidentialityReport": "Alta",
-  "numReport": "16",
-  "dateReport": "2024-11-11",
-  "linkReport": "Dirección del informe",
+  "typeDiary": "Política",
+  "priorityDiary": "Alta",
+  "confidentialityDiary": "Alta",
+  "numDiary": "16",
+  "dateDiary": "2024-11-11",
+  "issueDiary": "Dolar, Diesel",
+  "linkDiary": "Dirección del informe",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+### ****SUNDAYS****
+###SUNDAYS GET ALL
+GET http://localhost:1234/sundays
+
+###SUNDAYS CREATE
+POST http://localhost:1234/sundays
+Content-Type: application/json
+
+{
+  "typeSunday": "Política",
+  "prioritySunday": "Media",
+  "confidentialitySunday": "Media",
+  "numSunday": "16",
+  "dateSunday": "2024-11-11",
+  "issueSunday": "Dolar, Diesel",
+  "linkSunday": "Dirección del informe",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+###SUNDAYS DELETE
+DELETE http://localhost:1234/sundays/be565884-17ad-4dbb-b649-b59b37d85f0c
+
+###SUNDAYS UPDATE
+PUT http://localhost:1234/sundays/9baa98fd-99e6-4a20-b22d-ab58dddbb00f
+Content-Type: application/json
+
+{
+  "typeSunday": "Política",
+  "prioritySunday": "Media",
+  "confidentialitySunday": "Media",
+  "numSunday": "16",
+  "dateSunday": "2024-11-11",
+  "issueSunday": "Dolar, Diesel",
+  "linkSunday": "Dirección del informe",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+### ****ALERTS****
+###ALERTS GET ALL
+GET http://localhost:1234/alerts
+
+###ALERTS CREATE
+POST http://localhost:1234/alerts
+Content-Type: application/json
+
+{
+  "typeAlert": "Política",
+  "priorityAlert": "Media",
+  "confidentialityAlert": "Media",
+  "numAlert": "16",
+  "dateAlert": "2024-11-11",
+  "issueAlert": "Dolar, Diesel",
+  "linkAlert": "Dirección del informe",
+  "idArea": "c7e30e65-92a9-4a15-bd4d-ab65c64073c8",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+###ALERTS DELETE
+DELETE http://localhost:1234/alerts/45014b96-1a0a-4d62-b880-6b78cb73a082
+
+###ALERTS UPDATE
+PUT http://localhost:1234/alerts/45014b96-1a0a-4d62-b880-6b78cb73a082
+Content-Type: application/json
+
+{
+  "typeAlert": "Política",
+  "priorityAlert": "Alta",
+  "confidentialityAlert": "Alta",
+  "numAlert": "16",
+  "dateAlert": "2024-11-11",
+  "issueAlert": "Marcha Evo",
+  "linkAlert": "Dirección del informe",
+  "idArea": "c7e30e65-92a9-4a15-bd4d-ab65c64073c8",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+### ****MONITORING****
+###MONITORING GET ALL
+GET http://localhost:1234/monitoring
+
+###MONITORING CREATE
+POST http://localhost:1234/monitoring
+Content-Type: application/json
+
+{
+  "typeMonitoring": "Política",
+  "priorityMonitoring": "Media",
+  "confidentialityMonitoring": "Media",
+  "numMonitoring": "16",
+  "dateMonitoring": "2024-11-11",
+  "linkMonitoring": "Dirección del informe",
+  "idArea": "c7e30e65-92a9-4a15-bd4d-ab65c64073c8",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+###MONITORING DELETE
+DELETE http://localhost:1234/monitoring/9e1ee95e-989f-4b91-b105-dd0762675457
+
+###MONITORING UPDATE
+PUT http://localhost:1234/monitoring/9e1ee95e-989f-4b91-b105-dd0762675457
+Content-Type: application/json
+
+{
+  "typeMonitoring": "Internacional",
+  "priorityMonitoring": "Alta",
+  "confidentialityMonitoring": "Alta",
+  "numMonitoring": "16",
+  "dateMonitoring": "2024-11-11",
+  "linkMonitoring": "Dirección del informe",
   "idArea": "c7e30e65-92a9-4a15-bd4d-ab65c64073c8",
   "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
 }
@@ -383,6 +497,35 @@ Content-Type: application/json
   "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
 }
 
+### ****NGO WEEKLY****
+###NGO WEEKLY GET ALL
+GET http://localhost:1234/ngoweekly
+
+###NGO WEEKLY CREATE
+POST http://localhost:1234/ngoweekly
+Content-Type: application/json
+
+{
+  "numNgoWeekly": "16",
+  "dateNgoWeekly": "2024-11-11",
+  "linkNgoWeekly": "Dirección del informe",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
+###NGO WEEKLY DELETE
+DELETE http://localhost:1234/ngoweekly/b6f9b55b-e704-465a-8075-e1e7df1f4b9d
+
+###NGO WEEKLY UPDATE
+PUT http://localhost:1234/ngoweekly/addbe0dd-8142-4085-93bc-7a29cfa10355
+Content-Type: application/json
+
+{
+  "numNgoWeekly": "50",
+  "dateNgoWeekly": "2024-11-11",
+  "linkNgoWeekly": "Dirección del informe",
+  "idUser": "be565884-17ad-4dbb-b649-b59b37d85f0c"
+}
+
 ### ****ISSUES****
 ###ISSUES GET ALL
 GET http://localhost:1234/issues
@@ -393,7 +536,7 @@ Content-Type: application/json
 
 {
   "issueReport": "Dolar, Diesel",
-  "tagsReport": "7",
+  "intensityIssue": "7",
   "idReport": "e134241a-d158-471c-874a-9d5aa79623f1" 
 }
 
@@ -406,7 +549,7 @@ Content-Type: application/json
 
 {
   "issueReport": "Dolar, Diesel",
-  "tagsReport": "7",
+  "intensityIssue": "7",
   "idReport": "e134241a-d158-471c-874a-9d5aa79623f1" 
 }
 

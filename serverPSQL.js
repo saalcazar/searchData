@@ -1,4 +1,7 @@
 import { createApp } from './app.js'
+import { DiaryModel } from './models/reports/diary.js'
+import { SundayModel } from './models/reports/sunday.js'
+import { AlertModel } from './models/reports/alert.js'
 import { AssociationModel } from './models/subjects/association.js'
 import { CollectiveModel } from './models/subjects/collective.js'
 import { IndividualModel } from './models/subjects/individual.js'
@@ -8,8 +11,9 @@ import { AreaModel } from './models/users/area.js'
 import { RegionModel } from './models/users/region.js'
 import { RoleModel } from './models/users/role.js'
 import { UserModel } from './models/users/user.js'
-import { ReportModel } from './models/reports/reports.js'
+import { MonitoringModel } from './models/reports/monitoring.js'
 import { WeeklyModel } from './models/reports/weekly.js'
+import { NgoWeeklyModel } from './models/reports/ngoWeekly.js'
 import { LoginModel } from './models/login/login.js'
 import { IntermediateModel } from './models/intermediate/intermediate.js'
 import { IssueModel } from './models/reports/issues.js'
@@ -27,8 +31,12 @@ createApp({
   associationModel: AssociationModel,
   speachModel: SpeachModel,
   workModel: WorkModel,
-  reportModel: ReportModel,
+  diaryModel: DiaryModel,
+  sundayModel: SundayModel,
+  alertModel: AlertModel,
+  monitoringModel: MonitoringModel,
   weeklyModel: WeeklyModel,
+  ngoWeeklyModel: NgoWeeklyModel,
   loginModel: LoginModel,
   intermediateModel: IntermediateModel,
   issueModel: IssueModel,

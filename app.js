@@ -9,8 +9,12 @@ import { createCollectiveRouter } from './routes/subjects/collectives.js'
 import { createAssociationRouter } from './routes/subjects/associations.js'
 import { createSpeachRouter } from './routes/subjects/speachs.js'
 import { createWorkRouter } from './routes/subjects/works.js'
-import { createReportRouter } from './routes/reports/reports.js'
+import { createDiaryRouter } from './routes/reports/diaries.js'
+import { createSundayRouter } from './routes/reports/sundays.js'
+import { createAlertRouter } from './routes/reports/alerts.js'
+import { createMonitoringRouter } from './routes/reports/monitoring.js'
 import { createWeeklyRouter } from './routes/reports/weekly.js'
+import { createNgoWeeklyRouter } from './routes/reports/ngoWeekly.js'
 import { createLoginRouter } from './routes/login/login.js'
 import cookieParser from 'cookie-parser'
 import { createIntermediateRouter } from './routes/intermediate/intermediate.js'
@@ -29,8 +33,12 @@ export const createApp = ({
   associationModel,
   speachModel,
   workModel,
-  reportModel,
+  diaryModel,
+  sundayModel,
+  alertModel,
+  monitoringModel,
   weeklyModel,
+  ngoWeeklyModel,
   loginModel,
   intermediateModel,
   issueModel,
@@ -65,8 +73,12 @@ export const createApp = ({
   app.use('/associations', createAssociationRouter({ associationModel }))
   app.use('/speachs', createSpeachRouter({ speachModel }))
   app.use('/works', createWorkRouter({ workModel }))
-  app.use('/reports', createReportRouter({ reportModel }))
+  app.use('/diaries', createDiaryRouter({ diaryModel }))
+  app.use('/sundays', createSundayRouter({ sundayModel }))
+  app.use('/alerts', createAlertRouter({ alertModel }))
+  app.use('/monitoring', createMonitoringRouter({ monitoringModel }))
   app.use('/weekly', createWeeklyRouter({ weeklyModel }))
+  app.use('/ngoweekly', createNgoWeeklyRouter({ ngoWeeklyModel }))
   app.use('/login', createLoginRouter({ loginModel }))
   app.use('/intermediate', createIntermediateRouter({ intermediateModel }))
   app.use('/issues', createIssueRouter({ issueModel }))
