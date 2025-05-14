@@ -2,7 +2,7 @@ import z from 'zod'
 
 const issueSchema = z.object({
   issueReport: z.string(),
-  intensityIssue: z.string(),
+  tagsReport: z.string(),
   idReport: z.string()
 })
 

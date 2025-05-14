@@ -7,28 +7,7 @@ export class IntermediateController {
 
   // INDIVIDUALS
 
-  // INDIVIDUAL DIARIES
-  getIndividualDiaries = async (req, res) => {
-    const individualDiaries = await this.intermediateModel.getIndividualDiaries()
-    res.status(200).json(individualDiaries)
-  }
-
-  createIndividualDiaries = async (req, res) => {
-    const result = validateIntermediate(req.body)
-    if (!result.success) {
-      return res.status(400).json({ error: JSON.parse(result.error.message) })
-    }
-    const newIndividualDiaries = await this.intermediateModel.createIndividualDiaries({ input: result.data })
-    res.status(201).json(newIndividualDiaries)
-  }
-
-  deleteIndividualDiaries = async (req, res) => {
-    const { id } = req.params
-    await this.intermediateModel.deleteIndividualDiaries({ id })
-    res.status(200).json({ message: 'Deleted' })
-  }
-
-  // INDIVIDUAL MONITORING
+  // INDIVIDUAL REPORT
   getIndividualMonitoring = async (req, res) => {
     const individualMonitoring = await this.intermediateModel.getIndividualMonitoring()
     res.status(200).json(individualMonitoring)
