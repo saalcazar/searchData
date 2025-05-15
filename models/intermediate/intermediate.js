@@ -3,30 +3,30 @@ import { pool } from '../../helpers/dataBaseConect.js'
 export class IntermediateModel {
   // INDIVIDUALS
 
-  // INDIVIDUALS MONITORING
-  static async getIndividualMonitoring () {
+  // INDIVIDUALS REPORT
+  static async getIndividualReport () {
     try {
-      const result = await pool.query('SELECT id_individual, id_monitoring FROM individuals_monitoring')
+      const result = await pool.query('SELECT id_individual, id_report FROM individuals_reports')
       return result.rows
     } catch (e) {
       throw new Error('Error to get information')
     }
   }
 
-  static async createIndividualMonitoring ({ input }) {
+  static async createIndividualReport ({ input }) {
     const { idSubject, idReport } = input
 
     try {
-      const result = await pool.query('SELECT insert_individuals_monitoring($1, $2)', [idSubject, idReport])
+      const result = await pool.query('SELECT insert_individuals_report($1, $2)', [idSubject, idReport])
       return result.rows
     } catch (e) {
       throw new Error('Error to send information')
     }
   }
 
-  static async deleteIndividualMonitoring ({ id }) {
+  static async deleteIndividualReport ({ id }) {
     try {
-      const result = await pool.query('DELETE FROM individuals_monitoring WHERE id_monitoring = $1', [id])
+      const result = await pool.query('DELETE FROM individuals_reports WHERE id_report = $1', [id])
       return result.rows
     } catch (e) {
       throw new Error('Error to delete information')
@@ -65,31 +65,31 @@ export class IntermediateModel {
 
   // COLLECTIVES
 
-  // COLLECTIVES MONITORING
+  // COLLECTIVES REPORT
 
-  static async getCollectiveMonitoring () {
+  static async getCollectiveReport () {
     try {
-      const result = await pool.query('SELECT id_collective, id_monitoring FROM collectives_monitoring')
+      const result = await pool.query('SELECT id_collective, id_report FROM collectives_reports')
       return result.rows
     } catch (e) {
       throw new Error('Error to get information')
     }
   }
 
-  static async createCollectiveMonitoring ({ input }) {
+  static async createCollectiveReport ({ input }) {
     const { idSubject, idReport } = input
 
     try {
-      const result = await pool.query('SELECT insert_collectives_monitoring($1, $2)', [idSubject, idReport])
+      const result = await pool.query('SELECT insert_collectives_report($1, $2)', [idSubject, idReport])
       return result.rows
     } catch (e) {
       throw new Error('Error to send information')
     }
   }
 
-  static async deleteCollectiveMonitoring ({ id }) {
+  static async deleteCollectiveReport ({ id }) {
     try {
-      const result = await pool.query('DELETE FROM collectives_monitoring WHERE id_monitoring = $1', [id])
+      const result = await pool.query('DELETE FROM collectives_report WHERE id_report = $1', [id])
       return result.rows
     } catch (e) {
       throw new Error('Error to delete information')
