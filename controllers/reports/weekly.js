@@ -20,7 +20,7 @@ export class WeeklyController {
     req.body.linkWeekly = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateWeekly(req.body)
     if (!result.success) {
-      res.status(400).json({ error: JSON.parse(result.error.message) })
+      return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
     const newWeekly = await this.weeklyModel.create({ input: result.data })
     res.status(201).json(newWeekly)

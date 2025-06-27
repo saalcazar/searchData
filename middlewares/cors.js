@@ -1,9 +1,9 @@
 import cors from 'cors'
 
 const ACCEPTED_ORIGINS = [
-  'http://192.168.40.108:5173',
-  'http://192.168.40.108:5174',
-  'http://192.168.40.108:1234',
+  'http://192.168.40.103:5173',
+  'http://192.168.40.103:5174',
+  'http://192.168.40.103:1234',
 ]
 
 export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) => cors({

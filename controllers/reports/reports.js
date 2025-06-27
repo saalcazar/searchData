@@ -17,10 +17,10 @@ export class ReportController {
   }
 
   create = async (req, res) => {
-    req.body.linkreport = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
+    req.body.linkReport = req.file ? `/uploads/reports/${req.file.filename}` : 'ruta por defecto'
     const result = validateReport(req.body)
     if (!result.success) {
-      res.status(400).json({ error: JSON.parse(result.error.message) })
+      return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
     const newReport = await this.reportModel.create({ input: result.data })
     res.status(201).json(newReport)
