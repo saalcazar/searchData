@@ -31,7 +31,7 @@ export class IssueController {
     if (result === false) {
       res.status(400).json({ error: JSON.parse(result.error.message) })
     }
-    res.status(201).json('Issue deleted')
+    res.status(201).json(result)
   }
 
   update = async (req, res) => {

@@ -24,7 +24,7 @@ export class IssueModel {
   static async create ({ input }) {
     const {
       issueReport,
-      tagsIssue,
+      tagsReport,
       idReport
     } = input
 
@@ -32,13 +32,12 @@ export class IssueModel {
     const [{ uuid }] = uuidResult.rows
 
     try {
-      await pool.query('SELECT create_issues_report($1, $2, $3, $4)', [uuid, issueReport, tagsIssue, idReport])
+      const issue = await pool.query('SELECT create_issues_report ($1, $2, $3, $4)', [uuid, issueReport, tagsReport, idReport])
+      return issue.rows
     } catch (e) {
       console.error('error', e)
       throw new Error('Error to send information')
     }
-    const result = await pool.query('SELECT id_issues_report, issue_report, tags_report, id_report FROM issues_report WHERE id_issues_report = $1', [uuid])
-    return result.rows
   }
 
   static async update ({ idIssueReport, input }) {
@@ -59,7 +58,8 @@ export class IssueModel {
 
   static async delete ({ id }) {
     try {
-      await pool.query('DELETE FROM issues_report WHERE id_report = $1', [id])
+      const issueDelete = await pool.query('SELECT delete_issues_report ($1)', [id])
+      return issueDelete.rows
     } catch (e) {
       throw new Error('Error to send information')
     }
