@@ -13,6 +13,12 @@ export class IntermediateController {
     res.status(200).json(result)
   }
 
+  getIndividualReportById = async (req, res) => {
+    const { id } = req.params
+    const result = await this.intermediateModel.getIndividualReportById({ id })
+    res.status(200).json(result)
+  }
+
   createIndividualReport = async (req, res) => {
     const result = validateIntermediate(req.body)
     if (!result.success) {

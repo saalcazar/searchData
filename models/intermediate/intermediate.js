@@ -13,6 +13,15 @@ export class IntermediateModel {
     }
   }
 
+  static async getIndividualReportById ({ id }) {
+    try {
+      const result = await pool.query('SELECT id_individual, id_report FROM individuals_reports WHERE id_report = $1', [id])
+      return result.rows
+    } catch (e) {
+      throw new Error('Error to get information')
+    }
+  }
+
   static async createIndividualReport ({ input }) {
     const { idSubject, idReport } = input
 

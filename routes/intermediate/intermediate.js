@@ -7,6 +7,7 @@ export const createIntermediateRouter = ({ intermediateModel }) => {
   const intermediateController = new IntermediateController({ intermediateModel })
   // INDIVIDUALS REPORT
   intermediateRouter.get('/individualReport', intermediateController.getIndividualReport)
+  intermediateRouter.get('/individualReport/:id', intermediateController.getIndividualReportById)
   intermediateRouter.post('/individualReport', intermediateController.createIndividualReport)
   intermediateRouter.delete('/individualReport/:id', intermediateController.deleteIndividualReport)
   // INDIVIDUALS WEEKLY
